@@ -1,0 +1,1 @@
+console.log("Exercise does not support PHP or JS.");
