@@ -31,12 +31,26 @@ function BinarySearchTree() {
         return this.root;
     };
     
-    // Start of function getHeight
-    this.getHeight = function(root) {
-        let l = root.left !== null ? this.getHeight(root.left) : 0;
-        let r = root.right !== null ? this.getHeight(root.right) : 0;
-        return ((l <= r) ? r : l) + (root !== this.root ? 1 : 0);
-    }; // End of function getHeight
+    // Start of function levelOrder
+    this.levelOrder = function(root) {
+		if (!root) return;
+
+        let queue = [root];
+        
+        while (queue.length) {
+			let node = queue.shift();
+			
+			process.stdout.write(node.data + ' ');
+			
+			if (node.left !== null) {
+				queue.push(node.left);
+			}
+			if (node.right !== null) {
+				queue.push(node.right);
+			}
+		}
+
+	}; // End of function levelOrder
 }; // End of function BinarySearchTree
 
 process.stdin.resume();
@@ -58,5 +72,5 @@ process.stdin.on('end', function () {
         root = tree.insert(root, values[i]);
     }
     
-    console.log(tree.getHeight(root));
+    tree.levelOrder(root);
 });
