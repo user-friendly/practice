@@ -10,6 +10,44 @@ footer {
     justify-content: center;
 }
 
+h1, h2, h3, h4, h5, h6 {
+	text-align: center;
+}  
+
+main {
+	flex-direction: column;
+}
+
+main #main-wrapper {
+	max-width: 1024px;
+	margin: 0 0;
+}
+
+@media (min-width: 375px) {
+	main #main-wrapper {
+		margin: 0rem 1rem;
+	}
+}
+
+/* @media (-webkit-min-device-pixel-ratio: 1) {
+	main {
+		color: red;
+	}
+}
+
+@media (-webkit-min-device-pixel-ratio: 2) {
+	main {
+		color: yellow;
+	}
+}
+
+@media (-webkit-min-device-pixel-ratio: 3) {
+	main {
+		color: white;
+	}
+}
+ */
+
 footer {
 	margin-top: 1rem;
 }
@@ -17,6 +55,7 @@ footer {
 canvas#render-surface {
 	width: 1024px;
 	height: 768px;
+	margin: 0;
 	
 	border: 2px solid black;
 }

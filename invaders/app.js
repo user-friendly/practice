@@ -2,6 +2,7 @@
 
 import path from 'path'
 import express from 'express'
+import { engine } from 'express-handlebars';
 import { readFileSync } from 'fs';
 
 const app = express()
@@ -12,14 +13,43 @@ const port = 3000
 const docroot = path.dirname((new URL(import.meta.url)).pathname)
 const pubroot = docroot + '/public'
 
+const disableHttpCache = true
+
 const indexHtml = readFileSync(docroot + '/tpl/index.html')
 
-app.use(express.static(pubroot))
+const setResponseHeaders = function(res, path, stat) {
+	if (disableHttpCache) {
+		res.set('Expires', 'Mon, 01 Jan 1990 00:00:00 GMT')
+    	// See "Kitchen-sink headers" at https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching
+	    res.set('Cache-Control', 'no-cache, no-store, max-age=0, must-revalidate')
+	    res.set('Pragma', 'no-cache')
+	}
+}
 
-// respond with "hello world" when a GET request is made to the homepage
+app.use(express.static(pubroot, {
+  setHeaders: setResponseHeaders
+}))
+
+app.engine('.html', engine({extname: '.html'}));
+app.set('view engine', '.html')
+app.set('views', './views')
+
 app.get('/', (req, res) => {
-  res.set('Content-Type', 'text/html')
-  res.send(indexHtml)
+  setResponseHeaders(res)
+  res.render('home');
+})
+
+app.get('/about', (req, res) => {
+  setResponseHeaders(res)
+  res.render('about');
+})
+
+app.get('/contact', (req, res) => {
+  setResponseHeaders(res)
+  res.render('contact');
+}).post('/contact', (req, res) => {
+  setResponseHeaders(res)
+  res.render('contact');
 })
 
 app.listen(port, hostname, () => {
