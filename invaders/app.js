@@ -3,7 +3,6 @@
 import path from 'path'
 import express from 'express'
 import { engine } from 'express-handlebars';
-import { readFileSync } from 'fs';
 
 const app = express()
 
@@ -14,8 +13,6 @@ const docroot = path.dirname((new URL(import.meta.url)).pathname)
 const pubroot = docroot + '/public'
 
 const disableHttpCache = true
-
-const indexHtml = readFileSync(docroot + '/tpl/index.html')
 
 const setResponseHeaders = function(res, path, stat) {
 	if (disableHttpCache) {
@@ -30,7 +27,16 @@ app.use(express.static(pubroot, {
   setHeaders: setResponseHeaders
 }))
 
-app.engine('.html', engine({extname: '.html'}));
+app.engine('.html', engine({
+	extname: '.html',
+	// Runtime option's data doesn't seem to work or I don't know how to access from within the
+	// template file.
+	runtimeOptions: {
+		data: {
+			disableHttpCache: disableHttpCache,
+		},
+	},
+}));
 app.set('view engine', '.html')
 app.set('views', './views')
 

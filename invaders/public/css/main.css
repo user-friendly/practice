@@ -19,7 +19,7 @@ main {
 }
 
 main #main-wrapper {
-	max-width: 1024px;
+	max-width: 1200px;
 	margin: 0 0;
 }
 
@@ -53,9 +53,9 @@ footer {
 }
 
 canvas#render-surface {
-	width: 1024px;
-	height: 768px;
 	margin: 0;
+	padding: 0;
 	
-	border: 2px solid black;
+	background: #000000;
+	/* border: 2px solid black; */
 }
