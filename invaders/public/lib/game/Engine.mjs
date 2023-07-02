@@ -1,6 +1,13 @@
 'use strict'
 
-class GameEngine {
+import Logger from './Logger.mjs'
+import { inputKeyboard } from './Input.mjs'
+// import assetManager from './AssetManager.mjs'
+import Player from './Player.mjs'
+
+let gameEngine = null
+
+class GameEngine extends Logger {
 	renderSurface = null
 	ctx = null
 	
@@ -13,11 +20,18 @@ class GameEngine {
 	frameElapsed = null
 	frameLastTimeStamp = null
 	
-	playerImageShip = new Image()
-	playerShipX = 0
-	playerShipY = 0
+	// User interface elemnts.
+	#ui		= []
+	// Non-interactible world elements.
+	#props	= []
+	// Interactive world elements.
+	#actors = []
 	
 	constructor() {
+		super()
+	}
+	
+	init() {
 		this.renderSurface = document.getElementById('render-surface')
 		if (!this.renderSurface) {
 			throw "Failed to get render surface by id: render-surface"
@@ -28,8 +42,6 @@ class GameEngine {
 			throw "Failed to get render surface's 2d context"
 		}
 		
-		this.updateSurfaceDimensions()
-		
 		// Set 2d ctx's font to match the page.
 		this.ctx.font = window.getComputedStyle(document.body).font
 		this.logDebug(`2d context font: ${this.ctx.font}`)
@@ -37,26 +49,19 @@ class GameEngine {
 		// The default should be good.
 		// this.ctx.globalCompositeOperation = "destination-over";
 		
-		// TODO Asset management here.
-		this.playerImageShip.src = '/media/spaceship.png'
-		this.playerImageShip.addEventListener('load', () => {
-			this.playerShipX = this.centerX
-			this.playerShipY = this.centerY
-			
-			this.logDebug(`Image "${this.playerImageShip.src} loaded`)
-		})
-		
-		// Draw the border. Required only once since the clear
-		// takes the border into account.
-		this.drawBorder()
+		this.updateSurfaceDimensions()
 		
 		this.logDebug('Engine initialized')
-		
-		window.requestAnimationFrame((timeStamp) => this.onLoad(timeStamp))
 	}
 	
-	logDebug(message) {
-		console.log(this.constructor.name + ': ' + message)
+	start() {
+		window.requestAnimationFrame((timeStamp) => this.onLoad(timeStamp))
+		
+		this.logDebug('Engine started')
+	}
+	
+	stop() {
+		window.cancelAnimationFrame()
 	}
 	
 	onLoad(timeStamp) {
@@ -69,10 +74,15 @@ class GameEngine {
 		}
 		
 		this.clear()
+		this.drawBorder()
 		this.drawCenter()
 		
-		if (this.playerImageShip.complete) {
+		if (true/*this.playerImageShip.complete*/) {
 			this.logDebug('Loading complete.')
+			
+			let player = new Player()
+			this.#actors.push(player)
+			
 			this.requestNextFrame()
 		} else {
 			this.drawLoadingText()
@@ -84,22 +94,44 @@ class GameEngine {
 		this.frameElapsed = timeStamp - this.frameLastTimeStamp
 		this.frameLastTimeStamp = timeStamp
 		
-		console.log(`elapsed time ${this.frameElapsed}`)
+		// console.log(`elapsed time ${this.frameElapsed}`)
 		
 		this.clear()
+		this.drawBorder()
 		this.drawCenter()
 		
-		this.drawPlayerShip()
+		this.handleInput()
 		
-		// this.requestNextFrame()
+		this.handleGraphics()
+		
+		this.requestNextFrame()
 	}
-	
 	requestNextFrame() {
 		window.requestAnimationFrame((timeStamp) => this.onFrame(timeStamp))
 	}
 	
+	handleInput() {
+		// Notify all actors of the frame being processed.
+		for (let i = 0; i < this.#actors.length; i++) {
+			this.#actors[i].onInput(inputKeyboard);
+		}
+	}
+	
+	handleGraphics() {
+		for (let i = 0; i < this.#ui.length; i++) {
+			this.#ui[i].onFrame(this.frameElapsed);
+		}
+		for (let i = 0; i < this.#props.length; i++) {
+			this.#props[i].onFrame(this.frameElapsed);
+		}
+		for (let i = 0; i < this.#actors.length; i++) {
+			this.#actors[i].onFrame(this.frameElapsed);
+		}
+	}
+	
 	clear() {
-		this.ctx.clearRect(2, 2, this.width-4, this.height-4)
+		// this.ctx.clearRect(2, 2, this.width-4, this.height-4)
+		this.ctx.clearRect(0, 0, this.width, this.height)
 	}
 	
 	drawLoadingText() {
@@ -111,6 +143,7 @@ class GameEngine {
 	drawBorder() {
 		this.ctx.lineWidth = 4
 		this.ctx.strokeStyle = '#ff0000'
+		this.ctx.beginPath()
 		this.ctx.moveTo(0, 0)
 		this.ctx.lineTo(this.width, 0)
 		this.ctx.lineTo(this.width, this.height)
@@ -122,20 +155,13 @@ class GameEngine {
 	drawCenter() {
 		this.ctx.lineWidth = 1
 		this.ctx.strokeStyle = '#ffffff'
+		this.ctx.beginPath()
 		this.ctx.moveTo(0, this.centerY)
 		this.ctx.lineTo(this.width, this.centerY)
 		this.ctx.stroke()
 		this.ctx.moveTo(this.centerX, 0)
 		this.ctx.lineTo(this.centerX, this.height)
 		this.ctx.stroke()
-	}
-	
-	drawPlayerShip() {
-		this.ctx.drawImage(
-			this.playerImageShip,
-			this.playerShipX-(this.playerImageShip.width/2),
-			this.playerShipY-(this.playerImageShip.height/2)
-		)
 	}
 	
 	updateSurfaceDimensions() {
@@ -149,4 +175,6 @@ class GameEngine {
 	}
 }
 
-export default GameEngine
+gameEngine = new GameEngine()
+
+export default gameEngine
