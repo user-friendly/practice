@@ -1,13 +1,10 @@
 'use strict'
 
 import Entity from './Entity.mjs'
-import Vector3d from './Vector3d.mjs'
+import entityManager from './EntityManager.mjs'
 
 class Actor extends Entity {
-	hitPoints	= 0
-	
-	// Physical world location of actor.
-	location	= new Vector3d(0, 0, 0)
+	#components = {}
 	
 	constructor(name, label, location) {
 		super(name, label)
@@ -16,6 +13,18 @@ class Actor extends Entity {
 			this.location = location
 		}
 	}
+	
+	/**
+	 * Creates a generic actor.
+	 */
+	static createActor(name, label) {
+		let actor = new Actor(entityManager.getUniqueId(), name, label)
+		entityManager.registerEntity(actor)
+		return actor
+	}
+	
+	onFrame(elapsedTime) {}
+	onInput(keyboard, mouse) {}
 }
 
 export default Actor;

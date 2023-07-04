@@ -7,7 +7,7 @@ import { Asset, AssetImage, AssetSprite } from './Assets.mjs'
 let assetManager = null
 
 class AssetManager extends Logger {
-	assets = []
+	assets = {}
 	location = []
 	
 	constructor() {

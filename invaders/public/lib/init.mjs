@@ -1,8 +1,8 @@
 'use strict'
 
-import gameEngine from './game/Engine.mjs'
+import engine from './game/Engine.mjs'
 
 window.addEventListener('load', () => {
-	gameEngine.init()
-	gameEngine.start()
+	engine.init()
+	engine.start()
 })

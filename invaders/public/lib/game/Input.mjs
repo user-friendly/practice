@@ -20,11 +20,30 @@ class InputKeyboard extends Logger {
 		'Space': true,
 	}
 	
+	#inputReceived = false
+	
 	constructor() {
 		super()
-		window.addEventListener('keydown', (event) => this.onKeyDown(event))
-		window.addEventListener('keyup', (event) => this.onKeyUp(event))
-		window.addEventListener('blur', (event) => this.onWindowBlur(event))
+		window.addEventListener('keydown', (event) => {
+			this.#inputReceived = true
+			this.onKeyDown(event)
+		})
+		window.addEventListener('keyup', (event) => {
+			this.#inputReceived = true
+			this.onKeyUp(event)
+		})
+		window.addEventListener('blur', (event) => {
+			this.#inputReceived = true
+			this.onWindowBlur(event)
+		})
+	}
+	
+	isInputReceived() {
+		return this.#inputReceived
+	}
+	
+	resetInputReceived() {
+		this.#inputReceived = false
 	}
 	
 	isDownKeyUp() {

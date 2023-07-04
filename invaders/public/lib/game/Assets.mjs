@@ -8,8 +8,8 @@ class Asset extends Entity {
 	// The resource object.
 	resource = null
 	
-	constructor(location) {
-		super()
+	constructor(location, label = 'asset') {
+		super(location, label)
 		
 		this.location = location
 		this.setupLoadEventListener()
@@ -33,8 +33,8 @@ class Asset extends Entity {
 
 class AssetImage extends Asset {
 	
-	constructor(location) {
-		super(location)
+	constructor(location, label = 'asset_image') {
+		super(location, label)
 		
 		this.resource = new Image()
 		this.setupLoadEventListener()
@@ -50,8 +50,8 @@ class AssetImage extends Asset {
 }
 
 class AssetSprite extends AssetImage {
-	constructor(location) {
-		super(location)
+	constructor(location, label = 'asset_sprite') {
+		super(location, label)
 	}
 }
 

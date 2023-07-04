@@ -4,10 +4,13 @@ import Logger from './Logger.mjs'
 import { inputKeyboard } from './Input.mjs'
 // import assetManager from './AssetManager.mjs'
 import Player from './Player.mjs'
+import entityManager from './EntityManager.mjs'
 
-let gameEngine = null
+let engine = null
 
-class GameEngine extends Logger {
+class Engine extends Logger {
+	player = null
+	
 	renderSurface = null
 	ctx = null
 	
@@ -19,13 +22,6 @@ class GameEngine extends Logger {
 	frameStart = null
 	frameElapsed = null
 	frameLastTimeStamp = null
-	
-	// User interface elemnts.
-	#ui		= []
-	// Non-interactible world elements.
-	#props	= []
-	// Interactive world elements.
-	#actors = []
 	
 	constructor() {
 		super()
@@ -50,6 +46,9 @@ class GameEngine extends Logger {
 		// this.ctx.globalCompositeOperation = "destination-over";
 		
 		this.updateSurfaceDimensions()
+		
+		this.player = Player.getPlayer()
+		this.player.username = 'player01'
 		
 		this.logDebug('Engine initialized')
 	}
@@ -79,10 +78,7 @@ class GameEngine extends Logger {
 		
 		if (true/*this.playerImageShip.complete*/) {
 			this.logDebug('Loading complete.')
-			
-			let player = new Player()
-			this.#actors.push(player)
-			
+
 			this.requestNextFrame()
 		} else {
 			this.drawLoadingText()
@@ -110,23 +106,34 @@ class GameEngine extends Logger {
 		window.requestAnimationFrame((timeStamp) => this.onFrame(timeStamp))
 	}
 	
+	/**
+	 * Handles keyboard, mouse and UI inputs.
+	 */
 	handleInput() {
-		// Notify all actors of the frame being processed.
-		for (let i = 0; i < this.#actors.length; i++) {
-			this.#actors[i].onInput(inputKeyboard);
+		if (inputKeyboard.isInputReceived()) {
+			this.player.onInput(inputKeyboard)
+			
+			/*// Notify all actors of the frame being processed.
+			for (let i = 0; i < this.#actors.length; i++) {
+				this.#actors[i].onInput(inputKeyboard);
+			}*/
+			
+			inputKeyboard.resetInputReceived()
 		}
 	}
 	
+	/**
+	 * Handles physics, i.e. ship & projectile movement, collisions, etc.
+	 */
+	handlePhysics() {
+		// TBD
+	}
+	
+	/**
+	 * Handles displaying the results of the previous handlers.
+	 */
 	handleGraphics() {
-		for (let i = 0; i < this.#ui.length; i++) {
-			this.#ui[i].onFrame(this.frameElapsed);
-		}
-		for (let i = 0; i < this.#props.length; i++) {
-			this.#props[i].onFrame(this.frameElapsed);
-		}
-		for (let i = 0; i < this.#actors.length; i++) {
-			this.#actors[i].onFrame(this.frameElapsed);
-		}
+		// TBD
 	}
 	
 	clear() {
@@ -175,6 +182,6 @@ class GameEngine extends Logger {
 	}
 }
 
-gameEngine = new GameEngine()
+engine = new Engine()
 
-export default gameEngine
+export default engine
