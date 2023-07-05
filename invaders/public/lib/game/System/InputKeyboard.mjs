@@ -1,10 +1,8 @@
 'use strict'
 
-import Logger from './Logger.mjs'
+import System from './System.mjs'
 
-let inputKeyboard = null
-
-class InputKeyboard extends Logger {
+class InputKeyboard extends System {
 	debugMode = false
 	
 	keyDown = {}
@@ -36,6 +34,10 @@ class InputKeyboard extends Logger {
 			this.#inputReceived = true
 			this.onWindowBlur(event)
 		})
+	}
+	
+	onTick(timeStamp, timeElapsed) {
+		// TODO Process entities that have the input(keyboard?) component.
 	}
 	
 	isInputReceived() {
@@ -96,6 +98,4 @@ class InputKeyboard extends Logger {
 	}
 }
 
-inputKeyboard = new InputKeyboard()
-
-export { inputKeyboard }
+export default InputKeyboard

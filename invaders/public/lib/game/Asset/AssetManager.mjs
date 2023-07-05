@@ -1,6 +1,6 @@
 'use strict'
 
-import Logger from './Logger.mjs'
+import Logger from '../Logger.mjs'
 
 import { Asset, AssetImage, AssetSprite } from './Assets.mjs'
 
@@ -8,7 +8,7 @@ let assetManager = null
 
 class AssetManager extends Logger {
 	assets = {}
-	location = []
+	location = {}
 	
 	constructor() {
 		super()

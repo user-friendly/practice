@@ -1,17 +1,16 @@
 'use strict'
 
-import Entity from './Entity.mjs'
-
-class Asset extends Entity {
+class Asset {
+	// Name/label of the asset. Mostly for debug purposes?
+	name = null
 	// The resource location on the web or disk.
 	location = null
 	// The resource object.
 	resource = null
 	
-	constructor(location, label = 'asset') {
-		super(location, label)
-		
+	constructor(location, name = 'asset') {
 		this.location = location
+		this.name = name
 		this.setupLoadEventListener()
 	}
 	

@@ -1,7 +1,7 @@
 'use strict'
 
-import Logger from './Logger.mjs'
-import crypto from './Crypto.mjs'
+import Logger from '../Logger.mjs'
+import crypto from '../Crypto.mjs'
 
 let entityManager = null
 
@@ -28,10 +28,20 @@ class EntityManager extends Logger {
 	
 	registerEntity(entity) {
 		if (this.entity[entity.id] !== undefined) {
-			throw `Entity ${entity.name}@${entity.id} already registered`
+			throw `Entity ${entity.name} already registered`
 		}
-		this.logDebug(`Registering entity ${entity.name}@${entity.id}`)
+		this.logDebug(`Registering entity ${entity.name}`)
 		return this.entity[entity.id] = entity
+	}
+	
+	deregisterEntity(entity) {
+		if (this.entity[entity.id] === undefined) {
+			this.logDebug(`Entity ${entity.name} not registered`)
+			return
+		}
+		this.logDebug(`Deregistering entity ${entity.name}`)
+		delete this.entity[entity.id]
+		return
 	}
 	
 	getEntityById(id) {

@@ -1,6 +1,5 @@
 'use strict'
 
-import Actor from "./Actor.mjs"
 import Logger from "./Logger.mjs"
 
 class Player extends Logger {
