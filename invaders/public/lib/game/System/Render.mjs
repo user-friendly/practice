@@ -2,7 +2,7 @@
 
 import System from './System.mjs'
 
-class Render2d extends System {
+class Render extends System {
 	renderSurface = null
 	ctx = null
 	
@@ -10,6 +10,8 @@ class Render2d extends System {
 	height = 0
 	centerX = 0
 	centerY = 0
+	
+	entityCamera = null
 	
 	constructor() {
 		super()
@@ -84,8 +86,10 @@ class Render2d extends System {
 		this.centerX = this.width/2
 		this.centerY = this.height/2
 		
+		throw 'FIXME Update camera entity dimenssions.'
+		
 		this.logDebug(`new surface dimensions are: ${this.width}x${this.height}`)
 	}
 }
 
-export default Render2d
+export default Render

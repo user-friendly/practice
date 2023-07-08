@@ -1,9 +1,9 @@
 'use strict'
 
 class Asset {
-	// Name/label of the asset. Mostly for debug purposes?
+	// Name/label of the asset.
 	name = null
-	// The resource location on the web or disk.
+	// The resource location.
 	location = null
 	// The resource object.
 	resource = null

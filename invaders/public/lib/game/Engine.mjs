@@ -2,7 +2,7 @@
 
 import Logger from './Logger.mjs'
 import InputKeyboard from './System/InputKeyboard.mjs'
-import Render2d from './System/Render2d.mjs'
+import Render from './System/Render.mjs'
 
 let engine = null
 
@@ -21,7 +21,7 @@ class Engine extends Logger {
 	
 	init() {
 		this.keyboard = new InputKeyboard()
-		this.render = new Render2d()
+		this.render = new Render()
 		
 		this.logDebug('Engine initialized')
 	}
