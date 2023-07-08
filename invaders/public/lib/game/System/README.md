@@ -21,3 +21,9 @@ The simple Vector3d class will be used.
 
 World coordinates will be stored in the Transform component.
 
+Renderable
+----------
+
+An entity that can be displayed needs: a transform and a graphical representation.
+
+The Renderable component can have the asset/drawable.

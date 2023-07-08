@@ -8,6 +8,8 @@ class Camera extends Component {
 	height = 0
 	
 	constructor(width, height) {
+		super()
+		
 		this.width = width
 		this.height = height
 	}

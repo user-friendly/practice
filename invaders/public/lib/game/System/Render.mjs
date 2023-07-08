@@ -2,6 +2,11 @@
 
 import System from './System.mjs'
 
+import actorFactory from '../ActorFactory.mjs'
+import componentManager from '../Component/ComponentManager.mjs'
+import Camera from '../Component/Camera.mjs'
+import Transform from '../Component/Transform.mjs'
+
 class Render extends System {
 	renderSurface = null
 	ctx = null
@@ -32,6 +37,12 @@ class Render extends System {
 		
 		// The default should be good.
 		// this.ctx.globalCompositeOperation = "destination-over";
+		
+		this.entityCamera = actorFactory.createCamera()
+		let cs = componentManager.getComponents(this.entityCamera)
+		cs[Transform.type].position.x = 0
+		cs[Transform.type].position.y = 0
+		cs[Transform.type].position.z = 0
 		
 		this.updateSurfaceDimensions()
 	}
@@ -86,7 +97,9 @@ class Render extends System {
 		this.centerX = this.width/2
 		this.centerY = this.height/2
 		
-		throw 'FIXME Update camera entity dimenssions.'
+		let cs = componentManager.getComponents(this.entityCamera)
+		cs[Camera.type].width = this.width
+		cs[Camera.type].height = this.height
 		
 		this.logDebug(`new surface dimensions are: ${this.width}x${this.height}`)
 	}

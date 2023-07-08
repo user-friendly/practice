@@ -8,29 +8,13 @@ class Entity {
 	#id		= -1
 	#name	= 'undefined'
 	
-	// FIXME This is not the way to go! Component lists should not be in
-	//		 entities!!!
-	
-	#components = {}
-	
-	static create(components = [], name = 'entity') {
-		let actor = new Entity()
-		
-		actor.#id = entityManager.getUniqueId()
-		actor.name = name
-		
-		for (const c of components) {
-			if (c instanceof Component) {
-				if (actor.#components[c.type()] !== undefined) {
-					// TODO Figure out if we should report this or fail silently?
-					continue
-				}
-				actor.#components[c.type()] = c
-			}
-		}
-		
-		entityManager.registerEntity(actor)
-		return actor
+	// I want the id to be protected...
+	static create(name = 'entity') {
+		let e = new Entity()
+		e.#id = entityManager.getUniqueId()
+		e.#name = name
+		entityManager.registerEntity(e)
+		return e
 	}
 	
 	get id () {
