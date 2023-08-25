@@ -2,14 +2,12 @@
 
 def bruteForce(nums: list[int]):
     for i in range(len(nums)):
-        left = sum(nums[0:max(0,i)])
-        right = sum(nums[i+1:])
-        if left == right:
+        if sum(nums[0:i]) == sum(nums[i+1:]):
             return i
     
     return -1
 
-def linearVerbose(nums: list[int]):
+def linearCache(nums: list[int]):
     if len(nums) == 1:
         return 0
     
@@ -31,4 +29,4 @@ def linearVerbose(nums: list[int]):
     return -1
 
 def solve(nums: list[int]) -> int:
-    return linearVerbose(nums)
+    return linearCache(nums)
