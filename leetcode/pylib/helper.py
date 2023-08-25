@@ -7,6 +7,10 @@ import pylib.termcolors as colors
 def readSequences():
     with open(config.dataFileDir + "/data.input", "r", encoding="utf-8") as fp:
         for line in fp:
+            # Skip commented lines and empty lines.
+            line = line.strip()
+            if len(line) == 0 or line[0] == '#':
+                continue
             nums = [int(v) for v in line.split(",")]
             expected = int(fp.readline())
             yield [nums, expected]
