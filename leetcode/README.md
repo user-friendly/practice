@@ -11,6 +11,7 @@ https://leetcode.com/problems/maximum-difference-between-increasing-elements/
 
 Naive algo.
 
+```js
 /**
  * @param {number[]} nums
  * @return {number}
@@ -28,6 +29,7 @@ var maximumDifference = function(nums) {
 
     return max > 0 ? max : -1
 };
+```
 
 2. #1 Two Sum
 https://leetcode.com/problems/two-sum/
@@ -35,6 +37,7 @@ https://leetcode.com/problems/two-sum/
 Naive algo.
 Hash table can be used, how?
 
+```js
 /**
  * @param {number[]} nums
  * @param {number} target
@@ -53,11 +56,14 @@ var twoSum = function(nums, target) {
         }
     }
 };
+```
 
 3. #9 Palindrome Number
 https://leetcode.com/problems/palindrome-number
 
 Naive algo.
+
+```js
 /**
  * @param {number} x
  * @return {boolean}
@@ -84,12 +90,14 @@ var isPalindrome = function(x) {
 
 // Silly solution.
 return x === parseInt(x.toString().split("").reverse().join(""))
+```
 
 Date: 10/14/2025
 
 4. #13 Roman to Integer
 https://leetcode.com/problems/roman-to-integer
 
+```js
 /**
  * @param {string} s
  * @return {number}
@@ -136,10 +144,12 @@ var romanToInt = function(s) {
 
     return n
 };
+```
 
 5. !!!FAIL!!! #14 Longest Common Prefix
 https://leetcode.com/problems/longest-common-prefix
 
+```js
 /**
  * @param {string[]} strs
  * @return {string}
@@ -173,12 +183,14 @@ var longestCommonPrefix = function(strs) {
     }
 
 };
+```
 
 6. #20 Valid Parentheses
 https://leetcode.com/problems/valid-parentheses/
 
 The checks can be optimized, it's a sloppy job.
 
+```js
 /**
  * @param {string} s
  * @return {boolean}
@@ -211,6 +223,7 @@ var isValid = function(s) {
 
     return stack.length === 0
 };
+```
 
 7. #21 Merge Two Sorted Lists
 https://leetcode.com/problems/merge-two-sorted-lists
@@ -219,6 +232,7 @@ This one took a while, quite a while. The solution is complicated and
 I tested the code many times, getting errors and adjusting the code.
 No good! I would call this a fail, but gotto move forward.
 
+```js
 /**
  * Definition for singly-linked list.
  * function ListNode(val, next) {
@@ -285,12 +299,14 @@ var mergeTwoLists = function(list1, list2) {
 
     return root
 };
+```
 
 8. #26 Remove Duplicates from Sorted Array
 https://leetcode.com/problems/remove-duplicates-from-sorted-array
 
 Great! Figured it out pretty fast. Beats 100%? Nah, just that there are no better solutions.
 
+```js
 /**
  * @param {number[]} nums
  * @return {number}
@@ -306,6 +322,7 @@ var removeDuplicates = function(nums) {
 
     return k
 };
+```
 
 9. 27# Remove Element
 https://leetcode.com/problems/remove-element
@@ -314,6 +331,7 @@ Figured out the solution would be very similar to the previous one (#26) and it 
 However, I did run the test cases before even verifying code. About the same as #21,
 but with less spam.
 
+```js
 /**
  * @param {number[]} nums
  * @param {number} val
@@ -330,6 +348,7 @@ var removeElement = function(nums, val) {
 
     return k
 };
+```
 
 10. #2022 Convert 1D Array Into 2D Array
 https://leetcode.com/problems/convert-1d-array-into-2d-array
