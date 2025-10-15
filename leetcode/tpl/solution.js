@@ -1,6 +1,6 @@
-import { inputReader } from '../input-reader.js';
-inputReader(solution, true);
+import { inputReader } from '#lib/input-reader'
+inputReader(solution, true)
 
 function solution(lines) {
-	lines.forEach((v) => console.log(v));
+	lines.forEach((v) => console.log(v))
 }
