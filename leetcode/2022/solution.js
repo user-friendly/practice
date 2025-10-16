@@ -1,13 +1,5 @@
 import { inputReaderHelper } from '#lib/input-reader'
 
-
-inputReaderHelper(solution)
-
-function solution(data) {
-    // Custom code goes here!
-    return construct2DArray.apply(null, data)
-}
-
 /**
  * @param {number[]} original
  * @param {number} m
@@ -29,3 +21,5 @@ var construct2DArray = function (original, m, n) {
 
     return ary
 }
+
+inputReaderHelper(construct2DArray)

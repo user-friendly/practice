@@ -5,15 +5,19 @@ inputReaderHelper(solution)
 /**
  * Data for a single test case.
  * 
- * @param {any} data
+ * @param {any} arg1
+ * @param {any} arg2
+ * ...
+ * @param {any} argN
+ * 
  * @returns {any}
  */
-function solution(data) {
+function solution(arg1) {
     let output = null
     // Solution for a single case goes here.
 
     // EXAMPLE
-    output = "42: " + data
+    output = "42: " + arg1
 
     return output
 }

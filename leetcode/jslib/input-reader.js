@@ -56,7 +56,7 @@ function inputReader(callback) {
 }
 function inputReaderHelper(callback) {
 	inputReader((line) => {
-		let output = callback(JSON.parse(line))
+		let output = callback.apply(null, JSON.parse(line))
 		output = typeof output !== "string" ? JSON.stringify(output) : output
 		println(output)
 	})
