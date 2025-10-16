@@ -1,7 +1,15 @@
-import { inputReader } from '#lib/input-reader'
-import { print, println } from '#lib/output-writer'
-inputReader(solution, true)
+import { inputReaderHelper } from '#lib/input-reader'
 
-function solution(lines) {
-	lines.forEach((v) => println(v))
+inputReaderHelper(solution)
+
+/**
+ * Data for a single test case.
+ * 
+ * @param {any} data
+ * @returns {any}
+ */
+function solution(data) {
+    let output = 42
+    // Solution for a single case goes here.
+    return output
 }
