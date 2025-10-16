@@ -350,5 +350,13 @@ var removeElement = function(nums, val) {
 };
 ```
 
+Date: 10/13/2025
+
 10. #2022 Convert 1D Array Into 2D Array
-https://leetcode.com/problems/convert-1d-array-into-2d-array
+
+[LT](https://leetcode.com/problems/convert-1d-array-into-2d-array)
+
+[Source](./2022/solution.js)
+
+As usual, ran the code on the machine instead of reviewing it.
+Set the offset as `i * m` instead of `i * n`, which could've been avoided if I gave it a bit of thought.
