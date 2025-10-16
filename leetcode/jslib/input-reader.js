@@ -1,7 +1,6 @@
 
 import { stdin } from "node:process"
-import { default as rl } from  "node:readline"
-import { EOL } from "node:os"
+import { print, println } from "#lib/output-writer"
 
 if (!stdin.isPaused()) {
 	stdin.pause()
@@ -18,8 +17,11 @@ let buffer = ''
 let callbacks = []
 
 function flushBuffer() {
-	callbacks.forEach((cb) => cb(buffer))
-	buffer = ''
+	buffer = buffer.trim()
+	if (buffer.length > 0) {
+		callbacks.forEach((cb) => cb(buffer))
+		buffer = ''
+	}
 }
 
 stdin.on('data', (chunk) => {
