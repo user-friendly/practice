@@ -1,5 +1,6 @@
 
-import { EOL } from "node:os"
+// Force Uni
+const EOL = "\n"
 
 /**
  * Proxy for stdout.write.

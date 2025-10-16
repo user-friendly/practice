@@ -9,7 +9,11 @@ inputReaderHelper(solution)
  * @returns {any}
  */
 function solution(data) {
-    let output = 42
+    let output = null
     // Solution for a single case goes here.
+
+    // EXAMPLE
+    output = "42: " + data
+
     return output
 }
