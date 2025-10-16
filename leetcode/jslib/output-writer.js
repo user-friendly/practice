@@ -21,4 +21,4 @@ function println(chunk, encoding = null, callback = null) {
     return process.stdout.write(chunk + EOL, encoding = null, callback = null)
 }
 
-export { print, println }
+export { print, println, EOL }
