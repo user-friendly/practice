@@ -29,35 +29,6 @@ Date: 10/13/2025
 
 Naive algorithm.
 
-```js
-/**
- * @param {number} x
- * @return {boolean}
- */
-var isPalindrome = function(x) {
-    // All negative integers are not palindromes.
-    if (x < 0) {
-        return false
-    }
-    // Single digit positive numbers should be all valid?
-    if (x < 10) {
-        return true
-    }
-    // Naive, convert to str.
-    let str = x.toString()
-    let lower = Math.floor(str.length/2)
-    for (let i = 0; i < lower; i++) {
-        if (str[i] !== str[str.length-1-i]) {
-            return false
-        }
-    }
-    return true
-};
-
-// Silly solution.
-return x === parseInt(x.toString().split("").reverse().join(""))
-```
-
 4. #13 Roman to Integer
 
 [LeetCode](https://leetcode.com/problems/roman-to-integer),
