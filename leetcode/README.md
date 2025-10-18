@@ -71,24 +71,6 @@ Date: 10/15/2025
 
 Great! Figured it out pretty fast. Beats 100%? Nah, just that there are no better solutions.
 
-```js
-/**
- * @param {number[]} nums
- * @return {number}
- */
-var removeDuplicates = function(nums) {
-    let k = 1, i = 0
-    for (let j = 1; j < nums.length; j++) {
-        if (nums[i] !== nums[j]) {
-            nums[++i] = nums[j]
-            k++
-        }
-    }
-
-    return k
-};
-```
-
 9. 27# Remove Element
 
 [LeetCode](https://leetcode.com/problems/remove-element),
