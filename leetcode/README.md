@@ -81,10 +81,6 @@ Figured out the solution would be very similar to the previous one (#26) and it 
 However, I did run the test cases before even verifying code. About the same as #21,
 but with less spam.
 
-```js
-;
-```
-
 10. #2022 Convert 1D Array Into 2D Array
 
 [LeetCode](https://leetcode.com/problems/convert-1d-array-into-2d-array),
