@@ -53,41 +53,6 @@ Date: 10/14/2025
 
 The checks can be optimized, it's a sloppy job.
 
-```js
-/**
- * @param {string} s
- * @return {boolean}
- */
-var isValid = function(s) {
-    const open = {
-        '(': true,
-        '[': true,
-        '{': true,
-    }
-
-    const close = {
-        ')': '(',
-        ']': '[',
-        '}': '{',
-    }
-    const stack = []
-
-    let c = ''
-    for (let i = 0; i < s.length; i++) {
-        c = s[i]
-        if (open[c] === true) {
-            stack.push(c)
-            continue;
-        }
-        if (close[c] !== undefined && close[c] !== stack.pop()) {
-            return false
-        }
-    }
-
-    return stack.length === 0
-};
-```
-
 7. #21 Merge Two Sorted Lists
 
 [LeetCode](https://leetcode.com/problems/merge-two-sorted-lists),
