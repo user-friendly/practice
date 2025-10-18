@@ -7,7 +7,7 @@ Easy:
 1. #2016 Maximum Difference Between Increasing Elements
 
 [LeetCode](https://leetcode.com/problems/maximum-difference-between-increasing-elements/),
-[Solution](./2016/solution.js)\
+[Solution](./solutions/2016/solution.js)\
 Date: 10/13/2025
 
 Naive algorithm.
@@ -15,7 +15,7 @@ Naive algorithm.
 2. #1 Two Sum
 
 [LeetCode](https://leetcode.com/problems/two-sum/),
-[Solution](./1/solution.js)\
+[Solution](./solutions/1/solution.js)\
 Date: 10/13/2025
 
 Naive algorithm.
@@ -24,7 +24,7 @@ Hash table can be used, how?
 3. #9 Palindrome Number
 
 [LeetCode](https://leetcode.com/problems/palindrome-number),
-[Solution](./9/solution.js)\
+[Solution](./solutions/9/solution.js)\
 Date: 10/13/2025
 
 Naive algorithm.
@@ -32,7 +32,7 @@ Naive algorithm.
 4. #13 Roman to Integer
 
 [LeetCode](https://leetcode.com/problems/roman-to-integer),
-[Solution](./13/solution.js)\
+[Solution](./solutions/13/solution.js)\
 Date: 10/14/2025
 
 Meh.
@@ -40,7 +40,7 @@ Meh.
 5. !!!FAIL!!! #14 Longest Common Prefix
 
 [LeetCode](https://leetcode.com/problems/longest-common-prefix),
-[Solution](./14/solution.js)\
+[Solution](./solutions/14/solution.js)\
 Date: 10/14/2025
 
 Shame!
@@ -48,7 +48,7 @@ Shame!
 6. #20 Valid Parentheses
 
 [LeetCode](https://leetcode.com/problems/valid-parentheses/),
-[Solution](./20/solution.js)\
+[Solution](./solutions/20/solution.js)\
 Date: 10/14/2025
 
 The checks can be optimized, it's a sloppy job.
@@ -56,7 +56,7 @@ The checks can be optimized, it's a sloppy job.
 7. #21 Merge Two Sorted Lists
 
 [LeetCode](https://leetcode.com/problems/merge-two-sorted-lists),
-[Solution](./21/solution.js)\
+[Solution](./solutions/21/solution.js)\
 Date: 10/15/2025
 
 This one took a while, quite a while. The solution is complicated and
@@ -66,7 +66,7 @@ No good! I would call this a fail, but have to move forward.
 8. #26 Remove Duplicates from Sorted Array
 
 [LeetCode](https://leetcode.com/problems/remove-duplicates-from-sorted-array),
-[Solution](./26/solution.js)\
+[Solution](./solutions/26/solution.js)\
 Date: 10/15/2025
 
 Great! Figured it out pretty fast. Beats 100%? Nah, just that there are no better solutions.
@@ -74,7 +74,7 @@ Great! Figured it out pretty fast. Beats 100%? Nah, just that there are no bette
 9. 27# Remove Element
 
 [LeetCode](https://leetcode.com/problems/remove-element),
-[Solution](./27/solution.js)\
+[Solution](./solutions/27/solution.js)\
 Date: 10/15/2025
 
 Figured out the solution would be very similar to the previous one (#26) and it was!
@@ -84,7 +84,7 @@ but with less spam.
 10. #2022 Convert 1D Array Into 2D Array
 
 [LeetCode](https://leetcode.com/problems/convert-1d-array-into-2d-array),
-[Solution](./2022/solution.js)\
+[Solution](./solutions/2022/solution.js)\
 Date: 10/16/2025
 
 As usual, ran the code on the machine instead of reviewing it.

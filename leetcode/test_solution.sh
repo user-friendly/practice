@@ -10,11 +10,11 @@ fi
 
 NAME_DIR="$1"
 EXT="js"
-SOL_FILE="$NAME_DIR/solution.$EXT"
-INPUT_FILE="$NAME_DIR/data.input"
+SOL_DIR="solutions"
+SOL_FILE="$SOL_DIR/$NAME_DIR/solution.$EXT"
+INPUT_FILE="$SOL_DIR/$NAME_DIR/data.input"
 # Desired output, i.e. solution answers.
-OUTPUT_FILE="$NAME_DIR/data.output"
-
+OUTPUT_FILE="$SOL_DIR/$NAME_DIR/data.output"
 
 if [ ! "x$2" = "x" ]; then
 	INTERP="$2"
