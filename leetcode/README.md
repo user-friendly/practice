@@ -89,3 +89,11 @@ Date: 10/16/2025
 
 As usual, ran the code on the machine instead of reviewing it.
 Set the offset as `i * m` instead of `i * n`, which could've been avoided if I gave it a bit of thought.
+
+11. #110 Balanced Binary Tree
+
+[LeetCode](https://leetcode.com/problems/balanced-binary-tree/),
+[Solution](./solutions/110/solution.js)\
+Date: 10/20/2025
+
+

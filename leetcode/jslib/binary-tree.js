@@ -69,25 +69,72 @@ function TreeFromHeap(list) {
     // A list of all nodes, in no particular order.
     const nodes = []
 
-    console.log(`Converting the heap (n: ${size}, l: ${levels}): `, list)
+    // console.log(`Converting the heap (n: ${size}, l: ${levels}): `, list)
 
     root.val = list[0]
     nodes.push(root)
 
     // Breath-first walk.
-    for (let l = 0, i = 0, node = null; i < list.length; l++) {
-        const tmp = [],
-            end = i + 2 ** l
-        // Walks one level. Note the comparison has equals.
-        for (; i < end && i < list.length; i++) {
-            if (list[i]) {
-                tmp.push(list[i])
+    let lastNodes = [root]
+    let currentNodes = []
+    for (let l = 1, i = 1; i < list.length; l++) {
+        const end = i + 2 ** l
+        let left = true
+        // Walks one level.
+        for (; i < end /*&& i < list.length*/; i++) {
+
+            const node = new TreeNode(list[i] ? list[i] : 'NULL')
+
+            if (left) {
+                lastNodes[0].left = node
+            } else {
+                lastNodes[0].right = node
+                lastNodes.shift()
             }
+            left = !left
+            currentNodes.push(node)
         }
-        console.log(`Level ${l}, elements: `, tmp.join(','))
+
+        // console.log(`Level ${l}, elements:`, currentNodes.map(node => node.val).join(','))
+
+        lastNodes = [...currentNodes]
+        currentNodes = []
     }
 
     return root
 }
 
-export { TreeNode, TreeFromHeap }
+/**
+ * Breath-first (left-to-right).
+ * 
+ * @param {TreeNode} root
+ * @param {callback} cb
+ */
+function TreeWalkBreathFirst(root, cb) {
+    if (!root) {
+        return
+    }
+
+    let level = 1
+    let currentNodes = [root]
+    while (currentNodes.length) {
+        console.log(`Walk depth ${level}, elements:`, currentNodes.map(node => node.val).join(','))
+
+        let node = null
+        const queue = [...currentNodes.reverse()]
+        currentNodes = []
+        while (node = queue.pop()) {
+            cb(node, level)
+
+            if (node.left) {
+                currentNodes.push(node.left)
+            }
+            if (node.right) {
+                currentNodes.push(node.right)
+            }
+        }
+        level++
+    }
+}
+
+export { TreeNode, TreeFromHeap, TreeWalkBreathFirst }
