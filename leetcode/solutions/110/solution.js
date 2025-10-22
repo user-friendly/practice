@@ -6,7 +6,8 @@ import { TreeNode, TreeFromHeap, TreeWalkBreathFirst } from '#lib/binary-tree'
  * @return {boolean}
  */
 var isBalanced = function (root) {
-    TreeWalkBreathFirst(root, (n, l) => console.log(`Node val: ${n.val}, level: ${l}.`))
+    // TreeWalkBreathFirst(root, (n, d) => console.log(`Node val: ${n.val}, parent: ${n.parent?.val}, depth: ${d}.`))
+
     return false;
 }
 

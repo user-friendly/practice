@@ -1,10 +1,11 @@
 /**
  * Binary tree node.
  */
-function TreeNode(val, left, right) {
+function TreeNode(val, left, right, parent) {
     this.val = (val === undefined ? 0 : val)
     this.left = (left === undefined ? null : left)
     this.right = (right === undefined ? null : right)
+    this.parent = (parent === undefined ? null : parent)
 }
 
 // Notes on the "heap to nodes" conversion func:
@@ -64,15 +65,14 @@ function TreeFromHeap(list) {
         return null
     }
 
-    const levels = Math.ceil(Math.log2(size))
-    const root = new TreeNode()
+    //const depth = Math.ceil(Math.log2(size))
+    //console.log(`Converting the heap (n: ${size}, depth: ${depth}): `, list)
+
+    const root = new TreeNode(list[0])
+
+    // DEBUG
     // A list of all nodes, in no particular order.
-    const nodes = []
-
-    // console.log(`Converting the heap (n: ${size}, l: ${levels}): `, list)
-
-    root.val = list[0]
-    nodes.push(root)
+    //const nodes = [root]
 
     // Breath-first walk.
     let lastNodes = [root]
@@ -82,24 +82,40 @@ function TreeFromHeap(list) {
         let left = true
         // Walks one level.
         for (; i < end /*&& i < list.length*/; i++) {
+            const node = list[i] ? new TreeNode(list[i]) : null
+            currentNodes.push(node)
 
-            const node = new TreeNode(list[i] ? list[i] : 'NULL')
+            // DEBUG
+            //if (node) {
+            //    nodes.push(node)
+            //}
 
-            if (left) {
-                lastNodes[0].left = node
-            } else {
-                lastNodes[0].right = node
+            if (lastNodes[0]) {
+                if (node) {
+                    node.parent = lastNodes[0]
+                }
+                if (left) {
+                    lastNodes[0].left = node
+                } else {
+                    lastNodes[0].right = node
+                }
+            }
+
+            // The level above children are set (if parent exists), remove from queue.
+            if (!left) {
                 lastNodes.shift()
             }
+
             left = !left
-            currentNodes.push(node)
         }
 
-        // console.log(`Level ${l}, elements:`, currentNodes.map(node => node.val).join(','))
+        // console.log(`Depth ${l}, elements:`, currentNodes.map(node => node ? node.val : 'NULL').join(','))
 
         lastNodes = [...currentNodes]
         currentNodes = []
     }
+
+    // console.log(`Total nodes: ${nodes.length}`)
 
     return root
 }
@@ -118,7 +134,7 @@ function TreeWalkBreathFirst(root, cb) {
     let level = 1
     let currentNodes = [root]
     while (currentNodes.length) {
-        console.log(`Walk depth ${level}, elements:`, currentNodes.map(node => node.val).join(','))
+        // console.log(`Walk depth ${level}, elements:`, currentNodes.map(node => node.val).join(','))
 
         let node = null
         const queue = [...currentNodes.reverse()]
