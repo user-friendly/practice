@@ -94,6 +94,15 @@ Set the offset as `i * m` instead of `i * n`, which could've been avoided if I g
 
 [LeetCode](https://leetcode.com/problems/balanced-binary-tree/),
 [Solution](./solutions/110/solution.js)\
-Date: 10/20/2025
+Date: 10/22/2025
+
+This one took me probably more than 6 hours (plus pondering on the side) because of the helper/utility library. Similar issue with the linked list from the "merge sorted lists" problem.
+Worked the recursive solutions in about 20 mins. One failed submit, because I had enough, hah. And as usual, I don't verify the code before running it. This has been a very, very long standing issue for me.
+
+12. #112 Path Sum
+
+[LeetCode](https://leetcode.com/problems/path-sum/),
+[Solution](./solutions/112/solution.js)\
+Date: 10/22/2025
 
 
