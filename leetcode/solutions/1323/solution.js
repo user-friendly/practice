@@ -6,15 +6,21 @@ import { inputReaderHelper } from '#lib/input-reader'
  */
 var maximum69Number = function (num) {
     if (num < 10) {
-        return num
+        return 9
     }
-    let max = num
 
     // Just flip the left most 6 to a 9.
 
-    // TODO Implement.
+    let digits = num.toString().split('')
 
-    return max
+    for (let i = 0; i < digits.length; i++) {
+        if (digits[i] === '6') {
+            digits[i] = '9'
+            break;
+        }
+    }
+
+    return parseInt(digits.join(''))
 }
 
 inputReaderHelper(maximum69Number)

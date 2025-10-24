@@ -125,30 +125,6 @@ Date: 10/??/2025
 Missed the simple case of the single digit being 6 - return 9 for numbers less than 10.
 So only one failed submission, but still for an easy problem that's one too much.
 
-solution.js:
-/**
- * @param {number} num
- * @return {number}
- */
-var maximum69Number  = function(num) {
-    if (num < 10) {
-        return 9
-    }
-
-    // Just flip the left most 6 to a 9.
-
-    let digits = num.toString().split('')
-
-    for (let i = 0; i < digits.length; i++) {
-        if (digits[i] === '6') {
-            digits[i] = '9'
-            break;
-        }
-    }
-
-    return parseInt(digits.join(''))
-}
-
 #3033 Modify the Matrix
 https://leetcode.com/problems/modify-the-matrix
 
