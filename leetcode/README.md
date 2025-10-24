@@ -115,3 +115,11 @@ Good exercise overall.
 Date: 10/23/2025
 
 Wow, for such a long description it was easy. But, shame to admit first iteration was fail. All I had to do is just realize at least two numbers are needed.
+
+14. #1323 Maximum 69 Number
+
+[LeetCode](https://leetcode.com/problems/maximum-69-number),
+[Solution](./solutions/1323/solution.js)\
+Date: 10/??/2025
+
+Just flip the left most 6 to a 9.
