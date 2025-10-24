@@ -145,15 +145,6 @@ This was interesting! Very simple at first, but again, I didn't read well enough
 
 [LeetCode](https://leetcode.com/problems/make-a-square-with-the-same-color),
 [Solution](./solutions/3127/solution.js)\
-Date: 10/??/2025
+Date: 10/24/2025
 
-
-TODO Implement.
-
-/**
- * @param {character[][]} grid
- * @return {boolean}
- */
-var canMakeSquare = function(grid) {
-    
-}
+Hah, the solution is silly, but it works.
