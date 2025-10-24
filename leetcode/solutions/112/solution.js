@@ -21,22 +21,31 @@ var hasPathSum = function (root, targetSum) {
     // Walking forward (id est depth first) accumulate and at the leaf determine if the sum is the target.
     // Return true if there is at least one match.
 
-    const walker = (v, s = 0) => {
+    /**
+     * Rec walker.
+     * 
+     * @param {TreeNode} v
+     *      BTree vertex.
+     * @param {int} ts
+     *      Target sum.
+     * @param {int} s
+     *      Accumulated sum so far down the path.
+     * @returns
+     *      True if a path exists equal to the target sum, false otherwise.
+     */
+    const walker = (v, ts, s = 0) => {
         s += v.val
 
-        if (!(v.left || v.right) && s === targetSum) {
-            return true
-        } else {
-            return false
+        // Leaf vert check.
+        if (!(v.left || v.right)) {
+            return s === ts
         }
 
-        const a = v.left ? walker(v.left, s) : null,
-            b = v.right ? walker(v.right, s) : null
-
-        return a || b
+        return (v.left ? walker(v.left, ts, s) : false)
+            || (v.right ? walker(v.right, ts, s) : false)
     }
 
-    return walker(root)
+    return walker(root, targetSum)
 }
 
-inputReaderHelper((list) => hasPathSum(TreeFromHeap(list)))
+inputReaderHelper((list, targetSum) => hasPathSum(TreeFromHeap(list), targetSum))
