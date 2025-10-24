@@ -103,6 +103,15 @@ Worked the recursive solutions in about 20 mins. One failed submit, because I ha
 
 [LeetCode](https://leetcode.com/problems/path-sum/),
 [Solution](./solutions/112/solution.js)\
-Date: 10/22/2025
+Date: 10/23/2025
 
+Figuring out a rough plan was easy. Implementing and refactoring (removing the nexted walker function) took about 30 mins.
+Good exercise overall.
 
+13. #2980 Check if Bitwise OR Has Trailing Zeros
+
+[LeetCode](https://leetcode.com/problems/check-if-bitwise-or-has-trailing-zeros),
+[Solution](./solutions/2980/solution.js)\
+Date: 10/23/2025
+
+Wow, for such a long description it was easy. But, shame to admit first iteration was fail. All I had to do is just realize at least two numbers are needed.
