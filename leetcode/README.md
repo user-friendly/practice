@@ -120,57 +120,24 @@ Wow, for such a long description it was easy. But, shame to admit first iteratio
 
 [LeetCode](https://leetcode.com/problems/maximum-69-number),
 [Solution](./solutions/1323/solution.js)\
-Date: 10/??/2025
+Date: 10/24/2025
 
 Missed the simple case of the single digit being 6 - return 9 for numbers less than 10.
 So only one failed submission, but still for an easy problem that's one too much.
 
-#3033 Modify the Matrix
-https://leetcode.com/problems/modify-the-matrix
+15. #3033 Modify the Matrix
+
+[LeetCode](https://leetcode.com/problems/modify-the-matrix),
+[Solution](./solutions/3033/solution.js)\
+Date: 10/24/2025
 
 Took me a while. Failed one test run, because the test case was invalid. I didn't read one of the constraints.
 
-/**
- * @param {number[][]} matrix
- * @return {number[][]}
- */
-var modifiedMatrix = function(matrix) {
-    const MIN = -1
-    const newMatrix = new Array(matrix.length)
+16. #2704 To Be Or Not To Be
 
-    for (let m = 0; m < matrix.length; m++) {
-        newMatrix[m] = (new Array(matrix[0].length))
-    }
-
-    for (let n = 0; n < matrix[0].length; n++) {
-        // Stores the index at which a MIN was found in a column, if one was found.
-        // Could also be the all, except one (n-1 are MINs) - the worst case.
-        let replace = []
-        // Set the max to the minimum. It is possible to have a column of all minimums.
-        let max = MIN
-
-        for (let m = 0; m < matrix.length; m++) {
-            newMatrix[m][n] = matrix[m][n]
-            // Check for max.
-            if (matrix[m][n] > max) {
-                max = matrix[m][n]
-            }
-            // Check for MIN.
-            if (matrix[m][n] === MIN) {
-                replace.push(m)
-            }
-        }
-        // Replace MINs with max. 
-        for (const m of replace) {
-            newMatrix[m][n] = max
-        }
-    }
-
-    return newMatrix
-}
-
-#2704 To Be Or Not To Be
-https://leetcode.com/problems/to-be-or-not-to-be
+[LeetCode](https://leetcode.com/problems/to-be-or-not-to-be),
+[Solution](./solutions/2704/solution.js)\
+Date: 10/24/2025
 
 This was interesting! Very simple at first, but again, I didn't read well enough. Did quite a few of test cases. Probably coz I had to pee.
 
@@ -202,8 +169,12 @@ var expect = function(val) {
  * expect(5).notToBe(5); // throws "Equal"
  */
 
-#3127 Make a Square with the Same Color
-https://leetcode.com/problems/make-a-square-with-the-same-color
+17. #3127 Make a Square with the Same Color
+
+[LeetCode](https://leetcode.com/problems/make-a-square-with-the-same-color),
+[Solution](./solutions/3127/solution.js)\
+Date: 10/??/2025
+
 
 TODO Implement.
 
