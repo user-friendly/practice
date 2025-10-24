@@ -1,51 +1,37 @@
 import { inputReaderHelper } from '#lib/input-reader'
 import { TreeNode, TreeFromHeap } from '#lib/binary-tree'
 
+// Recursive solution:
+// Walking forward (id est depth first) accumulate and at the leaf determine if the sum is the target.
+// Return true if there is at least one match.
+
 /**
- * @param {TreeNode} root
- * @param {number} targetSum
- * @return {boolean}
+ * Rec walker.
+ * 
+ * @param {TreeNode} n
+ *      BTree node.
+ * @param {int} ts
+ *      Target sum.
+ * @param {int} s
+ *      Accumulated sum so far down the path.
+ * @returns {boolean}
+ *      True if a path exists equal to the target sum, false otherwise.
  */
-var hasPathSum = function (root, targetSum) {
+var hasPathSum = function (n, ts, s = 0) {
     // No verts? No good.
-    if (!root) {
+    if (!n) {
         return false
     }
-    // No children?
-    if (!(root.left || root.right)) {
-        // Easy-peasy.
-        return root.val === targetSum
+
+    s += n.val
+
+    // Leaf vert check.
+    if (!(n.left || n.right)) {
+        return s === ts
     }
 
-    // Recursive solution:
-    // Walking forward (id est depth first) accumulate and at the leaf determine if the sum is the target.
-    // Return true if there is at least one match.
-
-    /**
-     * Rec walker.
-     * 
-     * @param {TreeNode} v
-     *      BTree vertex.
-     * @param {int} ts
-     *      Target sum.
-     * @param {int} s
-     *      Accumulated sum so far down the path.
-     * @returns
-     *      True if a path exists equal to the target sum, false otherwise.
-     */
-    const walker = (v, ts, s = 0) => {
-        s += v.val
-
-        // Leaf vert check.
-        if (!(v.left || v.right)) {
-            return s === ts
-        }
-
-        return (v.left ? walker(v.left, ts, s) : false)
-            || (v.right ? walker(v.right, ts, s) : false)
-    }
-
-    return walker(root, targetSum)
+    return (n.left ? hasPathSum(n.left, ts, s) : false)
+        || (n.right ? hasPathSum(n.right, ts, s) : false)
 }
 
 inputReaderHelper((list, targetSum) => hasPathSum(TreeFromHeap(list), targetSum))
