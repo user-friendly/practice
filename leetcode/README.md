@@ -148,3 +148,12 @@ This was interesting! Very simple at first, but again, I didn't read well enough
 Date: 10/24/2025
 
 Hah, the solution is silly, but it works.
+
+18. #28 Find the Index of the First Occurrence in a String
+
+[LeetCode](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string),
+[Solution](./solutions/28/solution.js)\
+Date: 10/24/2025
+
+Hah, JS has String.indexOf. Super easy, but actual interview would probably ask for primitive impl.
+I dropped a comment in the solution.js - double pointer. Should be pretty easy.
