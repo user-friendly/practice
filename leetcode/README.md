@@ -139,35 +139,7 @@ Took me a while. Failed one test run, because the test case was invalid. I didn'
 [Solution](./solutions/2704/solution.js)\
 Date: 10/24/2025
 
-This was interesting! Very simple at first, but again, I didn't read well enough. Did quite a few of test cases. Probably coz I had to pee.
-
-/**
- * @param {string} val
- * @return {Object}
- */
-var expect = function(val) {
-    return {
-        toBe: (compVal) => {
-            if (val === compVal) {
-                return true
-            } else {
-                throw "Not Equal"
-            }
-        },
-        notToBe: (compVal) => {
-            if (val !== compVal) {
-                return true
-            } else {
-                throw "Equal"
-            }
-        }
-    }
-}
-
-/**
- * expect(5).toBe(5); // true
- * expect(5).notToBe(5); // throws "Equal"
- */
+This was interesting! Very simple at first, but again, I didn't read well enough. Did quite a few of test cases.
 
 17. #3127 Make a Square with the Same Color
 
