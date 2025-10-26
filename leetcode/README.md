@@ -166,3 +166,4 @@ Date: 10/26/2025
 
 Totally misunderstood the problem's constraints. It's the longest common prefix amongst **ALL** strings!
 If of 100 strings, 99 strings are all "car", but the remining one is "dog" then there's no common prefix.
+Not so challenging as I initially thought. The challenge was reading comprehension!!!
