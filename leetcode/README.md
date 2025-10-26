@@ -157,3 +157,12 @@ Date: 10/24/2025
 
 Hah, JS has String.indexOf. Super easy, but actual interview would probably ask for primitive impl.
 I dropped a comment in the solution.js - double pointer. Should be pretty easy.
+
+18. #14 Longest Common Prefix
+
+[LeetCode](https://leetcode.com/problems/longest-common-prefix),
+[Solution](./solutions/14/solution.js)\
+Date: 10/26/2025
+
+Totally misunderstood the problem's constraints. It's the longest common prefix amongst **ALL** strings!
+If of 100 strings, 99 strings are all "car", but the remining one is "dog" then there's no common prefix.

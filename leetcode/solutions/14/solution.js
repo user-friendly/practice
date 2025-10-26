@@ -24,15 +24,43 @@ var longestCommonPrefix = function (strs) {
     carborator
     */
 
-    let i = 0,
-        j = 0
-    while (i > 0) {
-        for (j = 0; j < strs.length; j++) {
+    const getPrefix = (a, b) => {
+        if (a[0] !== b[0]) {
+            return false
+        }
 
+        const end = Math.min(a.length, b.length)
+        for (let i = 0; i < end; i++) {
+            if (a[i] !== b[i]) {
+                return a.substr(0, i)
+            }
+        }
+        // In case on of the strings is entirely a prefix or both are.
+        return b.length > a.length ? a : b
+    }
+
+    let longestPrefix = ""
+
+    for (let i = 0; i < strs.length; i++) {
+        // Ignore null strings.
+        if (strs[i].length < 1) {
+            continue
+        }
+
+        for (let j = 0; j < strs.length; j++) {
+            // Ignore self & null strings.
+            if (i === j || strs[j].length < 1) {
+                continue
+            }
+
+            const prefix = getPrefix(strs[i], strs[j])
+            if (prefix && prefix.length > longestPrefix.length) {
+                longestPrefix = prefix
+            }
         }
     }
 
-    return "a"
+    return longestPrefix
 }
 
 inputReaderHelper(longestCommonPrefix)
