@@ -167,3 +167,11 @@ Date: 10/26/2025
 Totally misunderstood the problem's constraints. It's the longest common prefix amongst **ALL** strings!
 If of 100 strings, 99 strings are all "car", but the remining one is "dog" then there's no common prefix.
 Not so challenging as I initially thought. The challenge was reading comprehension!!!
+
+19. #2970 Count the Number of Incremovable Subarrays I
+
+[LeetCode](https://leetcode.com/problems/count-the-number-of-incremovable-subarrays-i),
+[Solution](./solutions/2970/solution.js)\
+Date: 10/??/2025
+
+The important thing I didn't notice after reading the description is that the increment between subsequent elements doesn't need to be exactly 1, but any positive integer (within limits, of course).
