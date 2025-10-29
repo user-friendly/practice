@@ -19,6 +19,8 @@ import { inputReaderHelper } from '#lib/input-reader'
 // General formula:
 // n + n-2 + n-3 ... + n-(n-1) - this looks like the sequential integer summation formula in reverse?
 // (n(n + 1))/2 - I looked it up.
+// FAIL - this does not work.
+
 
 /**
  * @param {number[]} nums
@@ -26,7 +28,21 @@ import { inputReaderHelper } from '#lib/input-reader'
  */
 var incremovableSubarrayCount = function (nums) {
     let total = 1
+    if (nums < 2) {
+        return total
+    }
 
+    const sum = n => (n * (n + 1)) / 2
+
+    let incTotal = 1
+    for (let i = 0, max = 0; i < nums.length; i++) {
+        if (nums[i] > max) {
+            incTotal++
+            max = nums[i]
+        }
+    }
+
+    return sum(incTotal)
 }
 
 inputReaderHelper(incremovableSubarrayCount)
