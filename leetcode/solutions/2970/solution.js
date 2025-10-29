@@ -21,28 +21,52 @@ import { inputReaderHelper } from '#lib/input-reader'
 // (n(n + 1))/2 - I looked it up.
 // FAIL - this does not work.
 
-
 /**
  * @param {number[]} nums
  * @return {number}
  */
 var incremovableSubarrayCount = function (nums) {
     let total = 1
-    if (nums < 2) {
+    if (nums.length < 2) {
         return total
     }
 
-    const sum = n => (n * (n + 1)) / 2
+    // const sum = n => (n * (n + 1)) / 2
 
-    let incTotal = 1
-    for (let i = 0, max = 0; i < nums.length; i++) {
-        if (nums[i] > max) {
-            incTotal++
-            max = nums[i]
+    // This is the worst solution ever. There must be a better way!
+
+    // k - length of subarray
+    for (let k = 1; k < nums.length; k++) {
+        // Inner loop moves the frame one position to the right, each iteration.
+        for (let p = 0, j = k; j <= nums.length; p++, j++) {
+
+            //console.log(p, j)
+
+            //let examined = []
+
+            let max = 0
+            for (let i = 0; i < nums.length; i++) {
+                //examined.push(i)
+                if (i === p) {
+                    i = j-1
+                    //examined.pop()
+                } else if (max < nums[i]) {
+                    max = nums[i]
+                } else {
+                    max = 0
+                    break;
+                }
+            }
+
+            //console.log(`examined new array:`, examined)
+
+            if (max > 0) {
+                total++
+            }
         }
     }
 
-    return sum(incTotal)
+    return total
 }
 
 inputReaderHelper(incremovableSubarrayCount)

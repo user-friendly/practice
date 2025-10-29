@@ -175,3 +175,5 @@ Not so challenging as I initially thought. The challenge was reading comprehensi
 Date: 10/??/2025
 
 The important thing I didn't notice after reading the description is that the increment between subsequent elements doesn't need to be exactly 1, but any positive integer (within limits, of course).
+
+After about 2 hours (with about an hour break in-between) I gave in to the dumbest solution. It beats 93.75%  of submissions on runtime complexity. Wtf? I mean, the data set is very small, but there has to be some better solution.
