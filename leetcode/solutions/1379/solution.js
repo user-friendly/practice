@@ -25,16 +25,14 @@ var findNodeByVal = function (node, target) {
         }
     }*/
 
-    if (!node) {
-        return null
-    }
+    if (node) {
+        if (node.val === target) {
+            return node.target
+        }
 
-    if (node.val === target) {
-        return node
-    }
-
-    if (node.left || node.right) {
-        return findNodeByVal(node.left) || findNodeByVal(node.right)
+        if (node.left || node.right) {
+            return findNodeByVal(node.left) || findNodeByVal(node.right)
+        }
     }
 
     return null
