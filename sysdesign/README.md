@@ -42,6 +42,35 @@ POST /sale {
 	timestamp (Unix ts, UTC)
 }
 
+TIER I
+------
+
+Start with a simple low data volume system. 250 products, 100 customers, 50 sales per day.
+
+The **Inventory Service** is a key/value store, keyed by product id. The data, amongst other things, includes current stock (quantity) of the product.
+
+The **Transaction Service** ingests changes in inventory (sales or restocks) and writes to a RDB.
+
+The RDB has a table storing the product inventory changes. Table (inventory_change) columns are:\
+
+id,pid,type,quantity,timestamp
+
+id			- serial id of change, pkey\
+pid			- product id, indexed\
+type		- sale/restock\
+quantity	- amount of products sold/bought\
+timestamp	- Unix date time
+
+The **Analytics Dashboard** displays items that will deplete within a week.
+
+1. Get changes for each product over the last 7 days (ts > now() - 604800 seconds).
+2. Calculate the velocity by subtracting the restocks from the sales.
+3. Get current inventory quantity from **Inventory Service** (by pid) and subtract the velocity from it.
+4. If the result if equal to or less than 0 (or other threshold) then display it on the dashboard.
+
+Analytics Dashboard can store values in-memory (Redis?) and have a scheduled job that refreshes all products each hour.
+
+![Warehouse Depletion Indicator System](./Tier_1-2025-10-10-1026.png)
 
 NOTES
 -----
@@ -52,5 +81,5 @@ Acceleration	- The rate of change in velocity. In calc terms, the derivative of 
 
 Velocity of a product:
 	- includes sold
-	- includes restocks (brought)
+	- includes restocks (bought)
 	- sum of sold - restocks, per delta time
