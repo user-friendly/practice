@@ -172,8 +172,16 @@ Not so challenging as I initially thought. The challenge was reading comprehensi
 
 [LeetCode](https://leetcode.com/problems/count-the-number-of-incremovable-subarrays-i),
 [Solution](./solutions/2970/solution.js)\
-Date: 10/??/2025
+Date: 10/28/2025
 
 The important thing I didn't notice after reading the description is that the increment between subsequent elements doesn't need to be exactly 1, but any positive integer (within limits, of course).
 
 After about 2 hours (with about an hour break in-between) I gave in to the dumbest solution. It beats 93.75%  of submissions on runtime complexity. Wtf? I mean, the data set is very small, but there has to be some better solution.
+
+19. #1379 Find a Corresponding Node of a Binary Tree in a Clone of That Tree
+
+[LeetCode](https://leetcode.com/problems/find-a-corresponding-node-of-a-binary-tree-in-a-clone-of-that-tree),
+[Solution](./solutions/1379/solution.js)\
+Date: 10/29/2025
+
+Since this is just "find node in BTree" I'll simplify the problem a bit.
