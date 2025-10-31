@@ -35,12 +35,14 @@ About 50 million sales per day.
 API
 ---
 
+```
 POST /sale {
 	customer id,
 	product id,
 	quantity,
 	timestamp (Unix ts, UTC)
 }
+```
 
 TIER I
 ------
