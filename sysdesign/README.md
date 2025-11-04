@@ -85,3 +85,8 @@ Velocity of a product:
 	- includes sold
 	- includes restocks (bought)
 	- sum of sold - restocks, per delta time
+
+
+Level 7 load balancer - sticky sessions?
+
+Estimation in interviews - use powers of 10.
