@@ -191,6 +191,6 @@ Took a while to figure this out, due to "mental block."
 
 [LeetCode](https://leetcode.com/problems/determine-the-winner-of-a-bowling-game/description/),
 [Solution](./solutions/1379/solution.js)\
-Date: 11/??/2025
+Date: 11/29/2025
 
-TBD
+Failed on first submission because of the ternary operator, trying to be clever.
