@@ -17,7 +17,7 @@ import { TreeNode, TreeFromHeap } from '#lib/binary-tree'
 var findNodeByVal = function (node, target) {
 
     // TODO Implement using loops.
-/*    const stack = []
+    /* const stack = []
     let current = node
     while (0 < stack.length) {
         if (!(current.left || current.right)) {

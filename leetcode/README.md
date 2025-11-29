@@ -182,6 +182,14 @@ After about 2 hours (with about an hour break in-between) I gave in to the dumbe
 
 [LeetCode](https://leetcode.com/problems/find-a-corresponding-node-of-a-binary-tree-in-a-clone-of-that-tree),
 [Solution](./solutions/1379/solution.js)\
-Date: 10/??/2025
+Date: 11/??/2025
 
 Since this is just "find node in BTree" I'll simplify the problem a bit.
+
+20. #2660 Determine the Winner of a Bowling Game
+
+[LeetCode](https://leetcode.com/problems/determine-the-winner-of-a-bowling-game/description/),
+[Solution](./solutions/1379/solution.js)\
+Date: 11/??/2025
+
+TBD
