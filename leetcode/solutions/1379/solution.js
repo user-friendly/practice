@@ -11,28 +11,23 @@ import { TreeNode, TreeFromHeap } from '#lib/binary-tree'
 
 /**
  * @param {TreeNode} root
- * @param {int} target
+ * @param {int} target // LeetCode's target is a TreeNode.
  * @return {int}
  */
 var findNodeByVal = function (node, target) {
 
-    // TODO Implement using loops.
-    /* const stack = []
-    let current = node
-    while (0 < stack.length) {
-        if (!(current.left || current.right)) {
-            if ()
-        }
-    }*/
+    // TODO Maybe a while loop one.
 
     if (node) {
+        // LC variant
+        // if (node.val === target.val) {
         if (node.val === target) {
-            return node.target
+            // LC variant
+            // return node
+            return node.val
         }
 
-        if (node.left || node.right) {
-            return findNodeByVal(node.left) || findNodeByVal(node.right)
-        }
+        return findNodeByVal(node.left, target) || findNodeByVal(node.right, target)
     }
 
     return null
