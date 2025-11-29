@@ -1,23 +1,13 @@
 import { inputReaderHelper } from '#lib/input-reader'
 
-inputReaderHelper(solution)
-
 /**
- * Data for a single test case.
- * 
- * @param {any} arg1
- * @param {any} arg2
- * ...
- * @param {any} argN
- * 
- * @returns {any}
+ * @param {number[]} player1
+ * @param {number[]} player2
+ * @return {number}
  */
-function solution(arg1) {
-    let output = null
-    // Solution for a single case goes here.
-
-    // EXAMPLE
-    output = "42: " + arg1
-
-    return output
+var isWinner = function (player1, player2) {
+    return -1
 }
+
+inputReaderHelper((ary1, ary2) => isWinner(ary1, ary2))
+
