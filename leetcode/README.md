@@ -199,16 +199,19 @@ Failed on first submission because of the ternary operator, trying to be clever.
 
 [LeetCode](https://leetcode.com/problems/search-insert-position/),
 [Solution](./solutions/35/solution.js)\
-Date: 11/??/2025
+Date: ??/??/202?
 
 Requires runtime to be O(log2(N)), possible given the array is sorted and has distinct elements. It is essentially a binary search solution.
 Big fail! Still having trouble implementing non-recursive binary search.
 
-22. #?? ??? ??? ???
+22. #58 Length of Last Word
 
-[LeetCode](https://example.com/problem/??),
-[Solution](./solutions/??/solution.js)\
-Date: ??/??/2025
+[LeetCode](https://leetcode.com/problems/length-of-last-word/),
+[Solution](./solutions/58/solution.js)\
+Date: 11/29/2025
+
+Naive impl might be to just (in JS) split on space, filter empty arrays, pop last, get length.
+But traversing backwards would be more efficient. LC: beats 100% runtime!!! Yeah right.
 
 23. #?? ??? ??? ???
 
