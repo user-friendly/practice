@@ -194,3 +194,54 @@ Took a while to figure this out, due to "mental block."
 Date: 11/29/2025
 
 Failed on first submission because of the ternary operator, trying to be clever.
+
+21. !!!FAIL!!!  #35 Search Insert Position
+
+[LeetCode](https://leetcode.com/problems/search-insert-position/),
+[Solution](./solutions/35/solution.js)\
+Date: 11/??/2025
+
+Requires runtime to be O(log2(N)), possible given the array is sorted and has distinct elements. It is essentially a binary search solution.
+Big fail! Still having trouble implementing non-recursive binary search.
+
+22. #?? ??? ??? ???
+
+[LeetCode](https://example.com/problem/??),
+[Solution](./solutions/??/solution.js)\
+Date: ??/??/2025
+
+23. #?? ??? ??? ???
+
+[LeetCode](https://example.com/problem/??),
+[Solution](./solutions/??/solution.js)\
+Date: ??/??/2025
+
+24. #?? ??? ??? ???
+
+[LeetCode](https://example.com/problem/??),
+[Solution](./solutions/??/solution.js)\
+Date: ??/??/2025
+
+25. #?? ??? ??? ???
+
+[LeetCode](https://example.com/problem/??),
+[Solution](./solutions/??/solution.js)\
+Date: ??/??/2025
+
+26. #?? ??? ??? ???
+
+[LeetCode](https://example.com/problem/??),
+[Solution](./solutions/??/solution.js)\
+Date: ??/??/2025
+
+27. #?? ??? ??? ???
+
+[LeetCode](https://example.com/problem/??),
+[Solution](./solutions/??/solution.js)\
+Date: ??/??/2025
+
+28. #?? ??? ??? ???
+
+[LeetCode](https://example.com/problem/??),
+[Solution](./solutions/??/solution.js)\
+Date: ??/??/2025
