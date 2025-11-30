@@ -213,11 +213,13 @@ Date: 11/29/2025
 Naive impl might be to just (in JS) split on space, filter empty arrays, pop last, get length.
 But traversing backwards would be more efficient. LC: beats 100% runtime!!! Yeah right.
 
-23. #?? ??? ??? ???
+23. #66 Plus One
 
-[LeetCode](https://example.com/problem/??),
-[Solution](./solutions/??/solution.js)\
-Date: ??/??/2025
+[LeetCode](https://leetcode.com/problems/plus-one/),
+[Solution](./solutions/66/solution.js)\
+Date: 11/29/2025
+
+Oh, fell for the "This is really easy!" trap again. A couple of edge cases got me - two failed submissions.
 
 24. #?? ??? ??? ???
 
