@@ -221,11 +221,14 @@ Date: 11/29/2025
 
 Oh, fell for the "This is really easy!" trap again. A couple of edge cases got me - two failed submissions.
 
-24. #?? ??? ??? ???
+24. #67 Add Binary
 
-[LeetCode](https://example.com/problem/??),
-[Solution](./solutions/??/solution.js)\
+[LeetCode](https://leetcode.com/problems/add-binary/),
+[Solution](./solutions/67/solution.js)\
 Date: ??/??/2025
+
+Should be easy if you know how binary math works, right?
+This is a problem for "tomorrow me".
 
 25. #?? ??? ??? ???
 
