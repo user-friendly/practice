@@ -225,10 +225,13 @@ Oh, fell for the "This is really easy!" trap again. A couple of edge cases got m
 
 [LeetCode](https://leetcode.com/problems/add-binary/),
 [Solution](./solutions/67/solution.js)\
-Date: ??/??/2025
+Date: 11/30/2025
 
 Should be easy if you know how binary math works, right?
 This is a problem for "tomorrow me".
+
+It wasn't that easy, but no failed submits.
+								- Tomorrow Me
 
 25. #?? ??? ??? ???
 
