@@ -34,7 +34,17 @@ import { inputReaderHelper } from '#lib/input-reader'
  * 1 > 1 > 1 > 1 > 1 > 1
  * 2 > 2 > 2
  * 
- * ...I like how this doesn't feel like an easy problem, but it is, right?
+ * (from 5)
+ * 2 > 2 > 1 > 1
+ * 2 > 1 > 2 > 1
+ * 1 > 2 > 2 > 1
+ * 
+ * 
+ * (from 5)
+ * 2 > 1 > 1 > 1 > 1
+ * 1 > 2 > 1 > 1 > 1
+ * 1 > 1 > 2 > 1 > 1
+ * 1 > 1 > 1 > 2 > 1
  * 
  */
 
