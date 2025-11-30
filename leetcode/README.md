@@ -233,11 +233,13 @@ This is a problem for "tomorrow me".
 It wasn't that easy, but no failed submits.
 								- Tomorrow Me
 
-25. #?? ??? ??? ???
+25. #69 Sqrt(x)
 
-[LeetCode](https://example.com/problem/??),
-[Solution](./solutions/??/solution.js)\
-Date: ??/??/2025
+[LeetCode](https://leetcode.com/problems/sqrtx/),
+[Solution](./solutions/69/solution.js)\
+Date: 11/??/2025
+
+
 
 26. #?? ??? ??? ???
 
