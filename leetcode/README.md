@@ -195,7 +195,7 @@ Date: 11/29/2025
 
 Failed on first submission because of the ternary operator, trying to be clever.
 
-21. !!!FAIL!!!  #35 Search Insert Position
+21. !!!FAIL!!! #35 Search Insert Position
 
 [LeetCode](https://leetcode.com/problems/search-insert-position/),
 [Solution](./solutions/35/solution.js)\
@@ -233,19 +233,22 @@ This is a problem for "tomorrow me".
 It wasn't that easy, but no failed submits.
 								- Tomorrow Me
 
-25. #69 Sqrt(x)
+25. !!!FAIL!!! #69 Sqrt(x)
 
 [LeetCode](https://leetcode.com/problems/sqrtx/),
 [Solution](./solutions/69/solution.js)\
 Date: 11/??/2025
 
+I'd say the brute force solution is a fail.
+To be revised later.
+
+26. #70 Climbing Stairs
+
+[LeetCode](https://leetcode.com/problems/climbing-stairs/),
+[Solution](./solutions/70/solution.js)\
+Date: 11/??/2025
 
 
-26. #?? ??? ??? ???
-
-[LeetCode](https://example.com/problem/??),
-[Solution](./solutions/??/solution.js)\
-Date: ??/??/2025
 
 27. #?? ??? ??? ???
 
