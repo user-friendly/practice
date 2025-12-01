@@ -11,5 +11,8 @@
   },
   "imports": {
     "#lib/*": "./jslib/*.js"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
   }
 }
