@@ -248,7 +248,7 @@ To be revised later.
 [Solution](./solutions/70/solution.js)\
 Date: 11/??/2025
 
-
+Wow, this one is not easy at all!
 
 27. #?? ??? ??? ???
 
