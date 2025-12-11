@@ -1,50 +1,53 @@
+import assert from 'assert'
+
 import _ from "lodash"
 
 import { print, println } from "#lib/output-writer"
 
-/**
- * val: 1, 2, 3
- * idx: 0, 1, 2
- * 
- * i = 0 (1), j = 2 (3)
- * // left
- * 0, floor(j/2) => 1
- * is i + 1 === j => 0 + 1 === 1 => true
- * return sum: 1 + 2
- * 
- * // right
- * 0 + 1 => 1, 2
- * check checks out
- * returns sum: 2 + 3 !!! PROBLEM - overlap
- * 
- * val: 1, 2, 3, 4 => 10
- * idx: 0, 1, 2, 3
- * 
- * Odd case is where I fail!
- * val: 1, 2, 3, 4, 5 => 10
- * idx: 0, 1, 2, 3, 4
- * 
- * val: 1, 2, 3, 4, 5, 6
- * idx: 0, 1, 2, 3, 4, 5 // on the next subdivision, we get into odd elements case
- * 
- * The clue is in the index's number itself?!
- * Even index indicates odd number of elements.
- * Odd index is even number of elements.
- * Can we use this to change the termination logic?
- * Is the problem only in the termination logic?
- * Parhaps this check should go into the pointers?
- */
+let rangeBottom = 1
+let rangeTop = 4
 
-let ary = _.range(1, 4)
+let args = process.argv.slice(2)
+
+if (args.length >= 2 && !isNaN(parseInt(args[0])) && !isNaN(parseInt(args[1]))) {
+    rangeBottom = parseInt(args[0])
+    rangeTop = parseInt(args[1])
+} else if (args[0] !== undefined && !isNaN(parseInt(args[0]))) {
+    rangeTop = parseInt(args[0])
+}
+
+if (rangeBottom >= rangeTop) {
+    rangeTop = rangeBottom + 1
+}
+
+println(`Generate an array in the range: ${rangeBottom}..${rangeTop}`)
+
+let ary = _.range(rangeBottom, rangeTop + 1)
 
 // Gets ary from parent context.
 const recSum = (i, j) => {
-    if (i + 1 === j) {
-        return ary[i] + ary[j]
+    let sum = 0
+
+    println(`descend in sub ary {${i}, ${j}}`)
+
+    assert(i > j === false, `Invalid range: ${i} > ${j}`)
+    
+    if (i === j || i + 1 === j) {
+        sum = ary[i] + ary[j]
+    } else {
+        // Why was it so hard to do the index math?
+        sum = recSum(i, i + Math.floor((j - i) / 2))
+            + recSum(i + Math.ceil((j - i) / 2), j)
     }
 
-    return recSum(i, Math.floor(j / 2))
-        + recSum(i + Math.ceil(j / 2), j)
+    print(`sub ary {${i}, ${j}}: `)
+    for (let k = i; k <= j; k++) {
+        print(ary[k] + ', ')
+    }
+    println(`sum: ${sum}`)
+
+    // The sum is still wrong, because of the overlap.
+    return sum
 }
 
 console.log(ary, _.sum(ary))
