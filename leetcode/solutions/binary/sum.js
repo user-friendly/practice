@@ -20,7 +20,7 @@ if (rangeBottom >= rangeTop) {
     rangeTop = rangeBottom + 1
 }
 
-println(`Generate an array in the range: ${rangeBottom}..${rangeTop}`)
+println(`Generate an array with range: ${rangeBottom}..${rangeTop}`)
 
 let ary = _.range(rangeBottom, rangeTop + 1)
 
@@ -28,28 +28,37 @@ let ary = _.range(rangeBottom, rangeTop + 1)
 const recSum = (i, j) => {
     let sum = 0
 
-    println(`descend in sub ary {${i}, ${j}}`)
+/*    println(`descend in sub ary {${i}, ${j}}`)*/
 
     assert(i > j === false, `Invalid range: ${i} > ${j}`)
     
-    if (i === j || i + 1 === j) {
+    if (i + 1 === j) {
         sum = ary[i] + ary[j]
+        // DP?
+        ary[i] = 0
+        ary[j] = 0
     } else {
         // Why was it so hard to do the index math?
         sum = recSum(i, i + Math.floor((j - i) / 2))
             + recSum(i + Math.ceil((j - i) / 2), j)
     }
 
-    print(`sub ary {${i}, ${j}}: `)
+/*    print(`sub ary {${i}, ${j}}: `)
     for (let k = i; k <= j; k++) {
         print(ary[k] + ', ')
     }
-    println(`sum: ${sum}`)
+    println(`sum: ${sum}`)*/
 
     // The sum is still wrong, because of the overlap.
     return sum
 }
 
-console.log(ary, _.sum(ary))
+console.log(ary)
 
-println(recSum(0, ary.length - 1))
+const expected = _.sum(ary)
+const actual = recSum(0, ary.length - 1)
+
+assert(expected === actual, `Invalid sum calculated: ${expected} != ${actual}`)
+
+println(`Sum of all elements is: ${actual}`)
+
