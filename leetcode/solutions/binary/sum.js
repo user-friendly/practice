@@ -28,8 +28,6 @@ let ary = _.range(rangeBottom, rangeTop + 1)
 const recSum = (i, j) => {
     let sum = 0
 
-/*    println(`descend in sub ary {${i}, ${j}}`)*/
-
     assert(i > j === false, `Invalid range: ${i} > ${j}`)
     
     if (i + 1 === j) {
@@ -43,12 +41,6 @@ const recSum = (i, j) => {
             + recSum(i + Math.ceil((j - i) / 2), j)
     }
 
-/*    print(`sub ary {${i}, ${j}}: `)
-    for (let k = i; k <= j; k++) {
-        print(ary[k] + ', ')
-    }
-    println(`sum: ${sum}`)*/
-
     // The sum is still wrong, because of the overlap.
     return sum
 }
@@ -61,4 +53,3 @@ const actual = recSum(0, ary.length - 1)
 assert(expected === actual, `Invalid sum calculated: ${expected} != ${actual}`)
 
 println(`Sum of all elements is: ${actual}`)
-
