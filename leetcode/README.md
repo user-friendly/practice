@@ -250,24 +250,27 @@ Date: 11/??/2025
 
 Wow, this one is not easy at all!
 
-27. #?? ??? ??? ???
-
 [LeetCode](https://example.com/problem/??),
 [Solution](./solutions/??/solution.js)\
 Date: ??/??/2025
 
-28. #?? ??? ??? ???
-
-[LeetCode](https://example.com/problem/??),
-[Solution](./solutions/??/solution.js)\
-Date: ??/??/2025
-
-29. #121. Best Time to Buy and Sell Stock
+27. #121. Best Time to Buy and Sell Stock
 [LeetCode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
 [Solution](./solutions/_TODO_Integrate_me/121/solution.py)
 Date: 09/03/2026
 
-30. #169. Majority Element
+28. #169. Majority Element
 [LeetCode](https://leetcode.com/problems/majority-element/)
 [Solution](./solutions/_TODO_Integrate_me/169/solution.py)
 Date: 09/03/2026
+
+29. #125. Valid Palindrome
+[LeetCode](https://leetcode.com/problems/valid-palindrome/)
+[Solution](./solutions/125/solution.py)
+Date: 09/04/2026
+
+29. #392. Is Subsequence
+[LeetCode](https://leetcode.com/problems/is-subsequence/)
+[Solution](./solutions/392/solution.py)
+Date: 09/04/2026
+

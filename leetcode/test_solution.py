@@ -7,8 +7,8 @@ from importlib import import_module
 import pylib.config as config
 from pylib.helper import testSequences
 
-config.dataFileDir = sys.argv[1]
+config.dataFileDir = "solutions/" + sys.argv[1]
 
-solution = import_module(sys.argv[1] + ".solution")
+solution = import_module("solutions." + sys.argv[1] + ".main")
 
-testSequences(solution.solve)
+testSequences(solution.problem)

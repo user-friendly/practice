@@ -1,6 +1,6 @@
 # -*- coding: UTF-8 -*-
 
-import sys
+import sys, os
 import pylib.config as config
 import pylib.termcolors as colors
 
@@ -27,3 +27,5 @@ def testSequences(solver):
     
     if failed:
         sys.exit(1)
+
+
