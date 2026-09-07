@@ -15,7 +15,7 @@ def problem(*args, **kwargs):
     return solution.TODO_Implement(*args, **kwargs)
 
 for case in testcases.all:
-  ret = problem(*case[1:])
-  assert ret == case[0], f"\033[1;31mfailed test, expected `{case[0]}`, got `{ret}`, case: {case}\033[0;0m"
+    ret = problem(*case[1:])
+    assert ret == case[0], f"\033[1;31mfailed test, expected `{case[0]}`, got `{ret}`, case: {case}\033[0;0m"
 
 print("\033[0;32mAll tests cases passed.\033[0;0m")
