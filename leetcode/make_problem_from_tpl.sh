@@ -8,4 +8,4 @@ if [ -d $SOL_TARGET ]; then
 	exit 1
 fi
 
-cp -r tpl $SOL_TARGET
+cp -r tpl_python $SOL_TARGET
