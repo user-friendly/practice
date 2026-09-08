@@ -277,3 +277,7 @@ Date: 09/04/2026
 30. #88. Merge Sorted Array
 [LeetCode](https://leetcode.com/problems/merge-sorted-array/)
 [Solution](./solutions/88/solution.py)
+
+31. #228. Summary Ranges
+[LeetCode](https://leetcode.com/problems/summary-ranges/)
+[Solution](./solutions/228/solution.py)

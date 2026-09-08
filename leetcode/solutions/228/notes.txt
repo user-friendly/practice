@@ -1,0 +1,37 @@
+
+
+indexes: 0 1 2 3 4 5
+ values: 0 1 2 4 5 7
+
+i = 1, a = 0
+  is cur - prev = 1?
+    => yes consecutive - continue
+
+i = 2, a = 0
+  is cur - prev = 1?
+    => yes
+
+i = 3, a = 0
+  is cur - prev = 1?
+    => no
+      add range: value at index a, prev
+      a = index of current
+
+i = 4, a = 3
+  is cur - prev = 1?
+    => yes
+
+i = 5, a = 3
+  is cur - prev = 1?
+    => no
+      add range: value at index a, prev
+      a = index of current
+
+end of loop
+
+if i = len(values) - 1:
+  if i > a:
+    add range: value at index a, value at end of a list
+  else
+    add numer
+
