@@ -51,25 +51,17 @@ class Solution:
             if j >= 0 and k >= 0:
                 if nums1[j] > nums2[k]:
                     nums1[i] = nums1[j]
-                    nums1[j] = MIN
                     j -= 1
-                elif nums2[k] > nums1[j]:
-                    nums1[i] = nums2[k]
-                    k -= 1
-                elif nums2[k] == nums1[j]:
+                elif nums2[k] > nums1[j] or nums2[k] == nums1[j]:
                     nums1[i] = nums2[k]
                     k -= 1
             elif j >= 0:
                 nums1[i] = nums1[j]
                 j -= 1
-                pass
             elif k >= 0:
                 nums1[i] = nums2[k]
                 k -= 1
-                pass
-
             i -= 1
-            pass
 
         return None
 
