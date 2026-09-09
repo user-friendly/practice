@@ -281,3 +281,9 @@ Date: 09/04/2026
 31. #228. Summary Ranges
 [LeetCode](https://leetcode.com/problems/summary-ranges/)
 [Solution](./solutions/228/solution.py)
+
+32. #383. Ransom Note
+[LeetCode](https://leetcode.com/problems/ransom-note/)
+[Solution](./solutions/383/solution.py)
+
+
