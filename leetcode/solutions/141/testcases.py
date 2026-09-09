@@ -1,6 +1,7 @@
 from pylib.listnode import make_linked_list
 
 all = (
+    (False, make_linked_list([1, 2], [1, None])),
     (False, make_linked_list()),
     (False, make_linked_list([], [1])),
     (False, make_linked_list([1])),

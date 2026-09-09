@@ -10,11 +10,22 @@ class Solution:
         if head is None:
             return False
 
+        # O(1) runtime, but O(N) memory wise.
+        # while head.next is not None:
+        #     if hasattr(head, "visited") and head.visited is not None:
+        #         return True
+        #     head.visited = True
+        #     head = head.next
+
+        i = 0
+        foo = head
         while head.next is not None:
-            if hasattr(head, "visited") and head.visited is not None:
-                return True
-            head.visited = True
             head = head.next
+            i += 1
+            if i % 2 == 0:
+                foo = foo.next
+            if foo is head:
+                return True
 
         return False
 
