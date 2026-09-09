@@ -255,35 +255,42 @@ Wow, this one is not easy at all!
 Date: ??/??/2025
 
 27. #121. Best Time to Buy and Sell Stock
-[LeetCode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
-[Solution](./solutions/_TODO_Integrate_me/121/solution.py)
+[LeetCode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/),
+[Solution](./solutions/_TODO_Integrate_me/121/solution.py)\
 Date: 09/03/2026
 
 28. #169. Majority Element
-[LeetCode](https://leetcode.com/problems/majority-element/)
-[Solution](./solutions/_TODO_Integrate_me/169/solution.py)
+[LeetCode](https://leetcode.com/problems/majority-element/),
+[Solution](./solutions/_TODO_Integrate_me/169/solution.py)\
 Date: 09/03/2026
 
 29. #125. Valid Palindrome
-[LeetCode](https://leetcode.com/problems/valid-palindrome/)
-[Solution](./solutions/125/solution.py)
+[LeetCode](https://leetcode.com/problems/valid-palindrome/),
+[Solution](./solutions/125/solution.py)\
 Date: 09/04/2026
 
 29. #392. Is Subsequence
-[LeetCode](https://leetcode.com/problems/is-subsequence/)
-[Solution](./solutions/392/solution.py)
+[LeetCode](https://leetcode.com/problems/is-subsequence/),
+[Solution](./solutions/392/solution.py)\
 Date: 09/04/2026
 
 30. #88. Merge Sorted Array
-[LeetCode](https://leetcode.com/problems/merge-sorted-array/)
-[Solution](./solutions/88/solution.py)
+[LeetCode](https://leetcode.com/problems/merge-sorted-array/),
+[Solution](./solutions/88/solution.py)\
+Date: 09/08/2026
 
 31. #228. Summary Ranges
-[LeetCode](https://leetcode.com/problems/summary-ranges/)
-[Solution](./solutions/228/solution.py)
+[LeetCode](https://leetcode.com/problems/summary-ranges/),
+[Solution](./solutions/228/solution.py)\
+Date: 09/08/2026
 
 32. #383. Ransom Note
-[LeetCode](https://leetcode.com/problems/ransom-note/)
-[Solution](./solutions/383/solution.py)
+[LeetCode](https://leetcode.com/problems/ransom-note/),
+[Solution](./solutions/383/solution.py)\
+Date: 09/09/2026
 
+33. #141. Linked List Cycle
+[LeetCode](https://leetcode.com/problems/linked-list-cycle/),
+[Solution](./solutions/141/solution.py)\
+Date: 09/09/2026
 
