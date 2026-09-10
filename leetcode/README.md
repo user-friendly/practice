@@ -294,3 +294,8 @@ Date: 09/09/2026
 [Solution](./solutions/141/solution.py)\
 Date: 09/09/2026
 
+34. #104 Maximum Depth of Binary Tree
+[LeetCode](https://leetcode.com/problems/maximum-depth-of-binary-tree/),
+[Solution](./solutions/104/solution.py)\
+Date: 09/10/2026
+
