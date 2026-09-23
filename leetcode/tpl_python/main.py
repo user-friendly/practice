@@ -1,13 +1,11 @@
 #!/usr/bin/env python3
 
-from typing import List
-
 # from pylib.listnode import ListNode
 from .testcases import all as testcases
 
 
 class Solution:
-    def TODO_Implement(self, nums: List[int], mult: int) -> int:
+    def TODO_Implement(self, nums: list[int], mult: int) -> int:
         return sum([n * mult for n in nums])
 
 

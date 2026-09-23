@@ -1,18 +1,17 @@
 #!/usr/bin/env python3
 
-from typing import Optional
-from pylib.treenode import TreeNode, print_tree_flat
+from pylib.treenode import OptTreeNode
 from .testcases import all as testcases
 
 
 class Solution:
-    def _depth_walk(self, node: Optional[TreeNode]) -> int:
+    def _depth_walk(self, node: OptTreeNode) -> int:
         if node is None:
             return 0
 
         return 1 + max(self._depth_walk(node.left), self._depth_walk(node.right))
 
-    def maxDepth(self, root: Optional[TreeNode]) -> int:
+    def maxDepth(self, root: OptTreeNode) -> int:
         return self._depth_walk(root)
 
 

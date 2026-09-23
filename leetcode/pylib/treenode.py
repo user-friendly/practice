@@ -1,17 +1,21 @@
-from typing import List
-
-
 # Definition for a binary tree node.
 # Note that parent member is not in the LC definition.
+
+type OptTreeNode = TreeNode | None
+"""Optional tree node."""
+
+
 class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
-        self.parent = None
+    def __init__(
+        self, val: int = 0, left: OptTreeNode = None, right: OptTreeNode = None
+    ):
+        self.val: int = val
+        self.left: OptTreeNode = left
+        self.right: OptTreeNode = right
+        self.parent: OptTreeNode = None
 
 
-def make_binary_tree(heap: List[int] = None) -> TreeNode | None:
+def make_binary_tree(heap: list[int | None] | None = None) -> OptTreeNode:
     """
     values: Binary tree heap.
     """
@@ -19,7 +23,7 @@ def make_binary_tree(heap: List[int] = None) -> TreeNode | None:
     if heap is None or len(heap) <= 0:
         return None
 
-    root = TreeNode(heap[0])
+    root = TreeNode(heap[0] if heap[0] is not None else 0)
 
     last_nodes = [root]
     current_nodes = []
@@ -30,7 +34,7 @@ def make_binary_tree(heap: List[int] = None) -> TreeNode | None:
         left = True
         # Walks one level
         while i < end:
-            node = TreeNode(heap[i]) if heap[i] is not None else None
+            node = TreeNode(heap[i]) if heap[i] is not None else None  # type: ignore
             current_nodes.append(node)
 
             if len(last_nodes) > 0 and last_nodes[0] is not None:
@@ -64,9 +68,9 @@ def make_binary_tree(heap: List[int] = None) -> TreeNode | None:
     return root
 
 
-def print_tree_flat(root: TreeNode | None) -> None:
+def print_tree_flat(root: OptTreeNode) -> None:
 
-    def _depth_first_rec(node: TreeNode):
+    def _depth_first_rec(node: OptTreeNode):
         if node is None:
             return print(f"[None]", end="")
 

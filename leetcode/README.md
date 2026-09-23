@@ -250,10 +250,6 @@ Date: 11/??/2025
 
 Wow, this one is not easy at all!
 
-[LeetCode](https://example.com/problem/??),
-[Solution](./solutions/??/solution.js)\
-Date: ??/??/2025
-
 27. #121 Best Time to Buy and Sell Stock
 [LeetCode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/),
 [Solution](./solutions/_TODO_Integrate_me/121/solution.py)\
