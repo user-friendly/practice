@@ -1,11 +1,25 @@
 #!/usr/bin/env python3
 
+import math
+
 from .testcases import all as testcases
 
 
 class Solution:
     def climbStairs(self, n: int) -> int:
-        return -1
+        j, k = 2, 3
+
+        if n == 1:
+            return 1
+        elif n == 2:
+            return 2
+
+        for i in range(4, n + 1):
+            m = j + k
+            j = k
+            k = m
+
+        return k
 
 
 def problem(*args, **kwargs):

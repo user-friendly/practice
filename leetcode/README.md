@@ -246,9 +246,11 @@ To be revised later.
 
 [LeetCode](https://leetcode.com/problems/climbing-stairs/),
 [Solution](./solutions/70/solution.js)\
-Date: 11/??/2025
+Date: ~~11/??/2025~~
+Date: 09/24/2026
 
 Wow, this one is not easy at all!
+To past me: yes it is, just your approach was dumb
 
 27. #121 Best Time to Buy and Sell Stock
 [LeetCode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/),
