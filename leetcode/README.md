@@ -301,3 +301,8 @@ Date: 09/10/2026
 [LeetCode](https://leetcode.com/problems/isomorphic-strings/),
 [Solution](./solutions/205/solution.py)\
 Date: 09/10/2026
+
+36. #198 House Robber
+[LeetCode](https://leetcode.com/problems/house-robber/),
+[Solution](./solutions/198/solution.py)\
+Date: 10/01/2026
