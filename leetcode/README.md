@@ -306,3 +306,8 @@ Date: 09/10/2026
 [LeetCode](https://leetcode.com/problems/house-robber/),
 [Solution](./solutions/198/solution.py)\
 Date: 10/01/2026
+
+37. #139 Word Break
+[LeetCode](https://leetcode.com/problems/word-break/),
+[Solution](./solutions/139/solution.py)\
+Date: 10/07/2026
