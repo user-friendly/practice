@@ -311,3 +311,10 @@ Date: 10/01/2026
 [LeetCode](https://leetcode.com/problems/word-break/),
 [Solution](./solutions/139/solution.py)\
 Date: 10/07/2026
+
+38. #120 Triangle
+[LeetCode](https://leetcode.com/problems/triangle/),
+[Solution](./solutions/120/solution.py)\
+Date: 10/11/2026
+
+39. ? Which one will it be? ?
